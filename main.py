@@ -35,12 +35,12 @@ def main():
         judge_model = gpt4_o
 
         # 5. 평가 데이터셋 로드
-        dataset = judge.load_dataset("dataset/eval_dataset.csv")
+        dataset = judge.load_dataset("dataset/eval_dataset_midm_base3.csv")
         
         if dataset:
             #6. 응답셋 생성 
-            print("\n--- 데이터셋 기반 응답 생성 ---")
-            judge.generate_responses_on_dataset(dataset)
+            #print("\n--- 데이터셋 기반 응답 생성 ---")
+            #judge.generate_responses_on_dataset(dataset)
             
             #7. 데이터셋 기반 평가 실행
             print("\n--- 데이터셋 기반 평가 시작 ---")

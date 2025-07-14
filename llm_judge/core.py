@@ -92,8 +92,8 @@ class LLMJudge:
                 prompt, response, reference_answer, self.evaluation_criteria
             )
             score_feedback = judge_model.generate_response(evaluation_prompt)
-            #print('\n', "***********************score_feedback : ", score_feedback, '\n')
-            #print('\n', "***********************evaluation_prompt : ", evaluation_prompt, '\n')
+            print('\n', "***********************score_feedback : ", score_feedback, '\n')
+            print('\n', "***********************evaluation_prompt : ", evaluation_prompt, '\n')
             
             try:
                 criteria_results = self._parse_multi_criteria_judge_response(score_feedback, self.evaluation_criteria)

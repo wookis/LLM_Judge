@@ -1,6 +1,7 @@
 import os
 from typing import Optional
 from .core import LLMInterface
+from utils.logger import logger
 
 # Note: To use these classes, you need to install the respective libraries:
 # pip install openai anthropic
@@ -21,13 +22,14 @@ class OpenAILLM(LLMInterface):
         self.client = OpenAI(api_key=self.api_key)
 
     def generate_response(self, prompt: str) -> str:
-        print("OpenAI GPT 모델과의 상호작용을 위한 클래스")
+        logger.debug(f"{self.model_name} 연동")
         try:
             response = self.client.chat.completions.create(
                 model=self.model_name,
                 messages=[{"role": "user", "content": prompt}]
             )
             return response.choices[0].message.content or ""  
+            #return response 
         except Exception as e:
             return f"Error calling OpenAI API: {e}"
 

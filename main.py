@@ -2,6 +2,7 @@ import json
 from llm_judge.core import LLMJudge, EvaluationCriteria
 from llm_judge.llm_interfaces import OpenAILLM, AnthropicLLM
 from dotenv import load_dotenv
+from utils.logger import logger
 
 load_dotenv()
 
@@ -35,25 +36,25 @@ def main():
         judge_model = gpt4_o
 
         # 5. 평가 데이터셋 로드
-        dataset = judge.load_dataset("dataset/eval_dataset_midm_base3.csv")
+        dataset = judge.load_dataset("dataset/eval_dataset_midm_base.csv")
         
         if dataset:
             #6. 응답셋 생성 
-            #print("\n--- 데이터셋 기반 응답 생성 ---")
+            #logger.info(f"--- 데이터셋 기반 응답 생성 ---")
             #judge.generate_responses_on_dataset(dataset)
             
             #7. 데이터셋 기반 평가 실행
-            print("\n--- 데이터셋 기반 평가 시작 ---")
+            logger.info(f"--- 데이터셋 기반 평가 시작 ---")
             #judge.evaluate_responses_on_dataset(dataset, judge_model)
             judge.run_evaluation_on_dataset(dataset, judge_model)
             
             #8. 결과 요약 및 저장
-            summary = judge.get_results_summary()
-            print("\n[종합 요약]")
-            print(json.dumps(summary, indent=2, ensure_ascii=False))
+            #summary = judge.get_results_summary()
+            #print("\n[종합 요약]")
+            #print(json.dumps(summary, indent=2, ensure_ascii=False))
             
-            judge.save_results("evaluation_results_from_dataset.json")
-            print("\n평가 결과가 'evaluation_results_from_dataset.json' 파일에 저장되었습니다.")
+            #judge.save_results("evaluation_results_from_dataset.json")
+            #print("\n평가 결과가 'evaluation_results_from_dataset.json' 파일에 저장되었습니다.")
 
     except (ValueError, ImportError) as e:
         print(f"오류: {e}")

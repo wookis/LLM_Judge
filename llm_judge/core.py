@@ -11,6 +11,7 @@ import re
 import pandas as pd
 import yaml
 from jinja2 import Template
+from utils.logger import logger
 
 PROMPT_CONFIG_PATH = 'config/eval_prompt.yaml'
 
@@ -74,6 +75,9 @@ class LLMJudge:
     
     def evaluate_response(
         self, 
+        no: str, 
+        domain: str, 
+        task: str, 
         model_name: str, 
         prompt: str,
         response: str,
@@ -91,9 +95,12 @@ class LLMJudge:
             evaluation_prompt = self._create_multi_criteria_prompt(
                 prompt, response, reference_answer, self.evaluation_criteria
             )
+            logger.debug(f"eval prompt : {evaluation_prompt}")
             score_feedback = judge_model.generate_response(evaluation_prompt)
-            print('\n', "***********************score_feedback : ", score_feedback, '\n')
-            print('\n', "***********************evaluation_prompt : ", evaluation_prompt, '\n')
+            #print('\n', "***********************score_feedback : ", score_feedback, '\n')
+            #print('\n', "***********************evaluation_prompt : ", evaluation_prompt, '\n')
+            logger.debug(f"score_feedback : {score_feedback}")
+
             
             try:
                 criteria_results = self._parse_multi_criteria_judge_response(score_feedback, self.evaluation_criteria)
@@ -178,6 +185,7 @@ class LLMJudge:
         # 1. JSON 배열 형태 시도
         try:
             json_array = json.loads(response)
+            #print("json_array*********************", json_array)
             if isinstance(json_array, list):
                 for obj in json_array:
                     name = obj.get('기준') or obj.get('criteria_name') or obj.get('name')
@@ -203,18 +211,18 @@ class LLMJudge:
                         score = obj.get('점수') or obj.get('score')
                         feedback = obj.get('피드백') or obj.get('feedback')
                         try:
-                            print('\n', "score count", score)
+                            #print('\n', "score count", score)
                             score = float(score)
                         except:
                             score = -1.0
-                            print('\n', "score error", score)
+                            #print('\n', "score error", score)
                         results.append((name, score, feedback))
                         found_names.add(name)
                     except Exception as e2:
                         fail_reason = f"JSON 오브젝트 파싱 실패: {e2, obj_str}"
-                        print('\n', name)
-                        print('\n', score)
-                        print('\n', feedback)
+                        # print('\n', name)
+                        # print('\n', score)
+                        # print('\n', feedback)
                         #print("****************e2 :", e2)
                         continue
             except Exception as e:
@@ -461,9 +469,12 @@ class LLMJudge:
             df = pd.read_csv(self.dataset_filepath, keep_default_na=False)
         except FileNotFoundError:
             df = pd.DataFrame(dataset)
-
+        row = 5
         dataset_changed = False
         for index, row in tqdm(df.iterrows(), total=len(df), desc="평가 실행"):
+            no = row.get("no")
+            domain = row.get("domain")
+            task = row.get("task")
             prompt = row.get("prompt")
             if not prompt:
                 continue
@@ -472,33 +483,41 @@ class LLMJudge:
             reference_answer = item.get("reference_answer")
             
             for model_name, model in self.models.items():
-                response_col = f"{model_name}_response"
+                #response_col = f"{model_name}_response"
+                response_col = f"response"
                 if response_col not in df.columns:
                     df[response_col] = ""                    
                 
                 response = item.get(response_col)
-                print("\n ***********************************")
-                print("\n model : ", model_name, "response_col1 : ", response)
-                print("\n ***********************************")
+                logger.debug(f"no : {no}")
+                logger.debug(f"domain : {domain}")
+                logger.debug(f"task : {task}")
+                logger.debug(f"prompt : {prompt}")
+                logger.debug(f"response : {response}")
+
                 if not response:
-                    print(f"응답 생성 중: {model_name} for '{prompt[:20]}...'")
+                    logger.info(f"응답 생성 중: {model_name} for '{prompt[:20]}...'")
                     response = model.generate_response(prompt)
                     df.loc[index, response_col] = response
                     item[response_col] = response
                     dataset_changed = True
 
-        self.evaluate_response(
-            model_name=model_name,
-            prompt=prompt,
-            response=response,
-            reference_answer=reference_answer,
-            judge_model=judge_model
-        )
-        
-
-
-        if dataset_changed:
-            print(f"\n새로운 응답을 '{self.dataset_filepath}'에 저장합니다.")
-            df.to_csv(self.dataset_filepath, index=False, encoding='utf-8-sig')
+            eval_response = ""
+            self.evaluate_response(
+                no = no,
+                domain = domain,
+                task = task,
+                model_name=model_name,
+                prompt=prompt,
+                response=response,
+                reference_answer=reference_answer,
+                judge_model=judge_model
+            )
+    
+            logger.info(f"평가 저장 중: {model_name} for '{prompt[:20]}...'")
+            df.loc[index, eval_response] = eval_response
+            item[eval_response] = eval_response
+        logger.info(f"\n새로운 평가를 '{self.dataset_filepath}'에 저장합니다.")
+        df.to_csv(self.dataset_filepath, index=False, encoding='utf-8-sig')
         
         self.eval_end_time = datetime.now() 

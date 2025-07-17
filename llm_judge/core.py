@@ -3,6 +3,7 @@ from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 from abc import ABC, abstractmethod
 import json
+from unittest import result
 import numpy as np
 from datetime import datetime, timedelta
 import csv
@@ -95,85 +96,87 @@ class LLMJudge:
             evaluation_prompt = self._create_multi_criteria_prompt(
                 prompt, response, reference_answer, self.evaluation_criteria
             )
-            logger.debug(f"eval prompt : {evaluation_prompt}")
+            #logger.debug(f"eval prompt : {evaluation_prompt}")
             score_feedback = judge_model.generate_response(evaluation_prompt)
             #print('\n', "***********************score_feedback : ", score_feedback, '\n')
             #print('\n', "***********************evaluation_prompt : ", evaluation_prompt, '\n')
             logger.debug(f"score_feedback : {score_feedback}")
 
-            
-            try:
-                criteria_results = self._parse_multi_criteria_judge_response(score_feedback, self.evaluation_criteria)
-            except Exception as e:
-                # 파싱 실패 시 -1점 처리
-                criteria_results = [
-                    (criteria.name, -1.0, f"파싱 실패: {e}") for criteria in self.evaluation_criteria
-                ]
-            for criteria_name, score, feedback in criteria_results:
-                result = EvaluationResult(
-                    model_name=model_name,
-                    criteria_name=criteria_name,
-                    score=score,
-                    feedback=feedback,
-                    prompt=prompt,
-                    response=response
-                )
-                results.append(result)
-                self.results.append(result)
-        else:
-            # 기존 기본 평가 로직
-            for criteria in self.evaluation_criteria:
-                score, feedback = self._basic_evaluation(
-                    response, reference_answer, criteria
-                )
-                result = EvaluationResult(
-                    model_name=model_name,
-                    criteria_name=criteria.name,
-                    score=score,
-                    feedback=feedback,
-                    prompt=prompt,
-                    response=response
-                )
-                results.append(result)
-                self.results.append(result)
+        #     try:
+        #         criteria_results = self._parse_multi_criteria_judge_response(score_feedback, self.evaluation_criteria)
+        #     except Exception as e:
+        #         # 파싱 실패 시 -1점 처리
+        #         criteria_results = [
+        #             (criteria.name, -1.0, f"파싱 실패: {e}") for criteria in self.evaluation_criteria
+        #         ]
+        #     for criteria_name, score, feedback in criteria_results:
+        #         result = EvaluationResult(
+        #             model_name=model_name,
+        #             criteria_name=criteria_name,
+        #             score=score,
+        #             feedback=feedback,
+        #             prompt=prompt,
+        #             response=response
+        #         )
+        #         results.append(result)
+        #         self.results.append(result)
+        # else:
+        #     # 기존 기본 평가 로직
+        #     for criteria in self.evaluation_criteria:
+        #         score, feedback = self._basic_evaluation(
+        #             response, reference_answer, criteria
+        #         )
+        #         result = EvaluationResult(
+        #             model_name=model_name,
+        #             criteria_name=criteria.name,
+        #             score=score,
+        #             feedback=feedback,
+        #             prompt=prompt,
+        #             response=response
+        #         )
+        #         results.append(result)
+        #         self.results.append(result)
 
-        # 평가 결과 저장 후 prompt별 가중 총점 계산
-        prompt_key = prompt
-        model_results_for_prompt = [r for r in self.results if r.prompt == prompt_key and r.model_name == model_name]
+        # # 평가 결과 저장 후 prompt별 가중 총점 계산
+        # prompt_key = prompt
+        # model_results_for_prompt = [r for r in self.results if r.prompt == prompt_key and r.model_name == model_name]
         
-        # 모든 criteria에 대한 점수를 모음
-        scores_by_criteria = {c.name: [] for c in self.evaluation_criteria}
-        for r in model_results_for_prompt:
-             if r.criteria_name in scores_by_criteria:
-                 scores_by_criteria[r.criteria_name].append(r.score)
+        # # 모든 criteria에 대한 점수를 모음
+        # scores_by_criteria = {c.name: [] for c in self.evaluation_criteria}
+        # for r in model_results_for_prompt:
+        #      if r.criteria_name in scores_by_criteria:
+        #          scores_by_criteria[r.criteria_name].append(r.score)
 
-        final_scores = []
-        weights = []
-        for c in self.evaluation_criteria:
-            # 가장 최근 점수 사용
-            score = scores_by_criteria[c.name][-1] if scores_by_criteria[c.name] else -1.0
-            final_scores.append(score)
-            weights.append(c.weight)
+        # final_scores = []
+        # weights = []
+        # for c in self.evaluation_criteria:
+        #     # 가장 최근 점수 사용
+        #     score = scores_by_criteria[c.name][-1] if scores_by_criteria[c.name] else -1.0
+        #     final_scores.append(score)
+        #     weights.append(c.weight)
 
-        if sum(weights) > 0:
-            valid_scores = [(s, w) for s, w in zip(final_scores, weights) if s != -1.0]
-            if valid_scores:
-                scores, ws = zip(*valid_scores)
-                weighted_score = float(np.average(scores, weights=ws))
-            else:
-                weighted_score = -1.0
-        else:
-            weighted_score = float(np.mean([s for s in final_scores if s != -1.0])) if any(s != -1.0 for s in final_scores) else -1.0
+        # if sum(weights) > 0:
+        #     valid_scores = [(s, w) for s, w in zip(final_scores, weights) if s != -1.0]
+        #     if valid_scores:
+        #         scores, ws = zip(*valid_scores)
+        #         weighted_score = float(np.average(scores, weights=ws))
+        #     else:
+        #         weighted_score = -1.0
+        # else:
+        #     weighted_score = float(np.mean([s for s in final_scores if s != -1.0])) if any(s != -1.0 for s in final_scores) else -1.0
 
-        if prompt_key not in self.prompt_scores:
-            self.prompt_scores[prompt_key] = {}
-        self.prompt_scores[prompt_key][model_name] = weighted_score
+        # if prompt_key not in self.prompt_scores:
+        #     self.prompt_scores[prompt_key] = {}
+        # self.prompt_scores[prompt_key][model_name] = weighted_score
         
-        return results
+        #results = score_feedback
+        
+        return score_feedback
 
     def _create_multi_criteria_prompt(self, prompt: str, response: str, reference_answer: Optional[str], criteria_list: List[EvaluationCriteria]) -> str:
         """여러 평가 기준을 한 번에 묻는 프롬프트 생성"""
-        template_str = PROMPT_TEMPLATES['multi_criteria_prompt']
+        #template_str = PROMPT_TEMPLATES['multi_criteria_prompt']
+        template_str = PROMPT_TEMPLATES['single_criteria_prompt']
         template = Template(template_str)
         return template.render(prompt=prompt, response=response, reference_answer=reference_answer, criteria_list=criteria_list)
 
@@ -469,7 +472,10 @@ class LLMJudge:
             df = pd.read_csv(self.dataset_filepath, keep_default_na=False)
         except FileNotFoundError:
             df = pd.DataFrame(dataset)
-        row = 5
+
+        output_file = os.path.join(os.path.dirname(__file__), 'eval_feedback_midm_base.csv')
+
+       
         dataset_changed = False
         for index, row in tqdm(df.iterrows(), total=len(df), desc="평가 실행"):
             no = row.get("no")
@@ -502,8 +508,7 @@ class LLMJudge:
                     item[response_col] = response
                     dataset_changed = True
 
-            eval_response = ""
-            self.evaluate_response(
+            eval_response = self.evaluate_response(
                 no = no,
                 domain = domain,
                 task = task,
@@ -513,11 +518,22 @@ class LLMJudge:
                 reference_answer=reference_answer,
                 judge_model=judge_model
             )
-    
+            response_col = f"{model_name}_result"
+            #eval_response = self.results
+            #logger.debug(f"평가 결과: {self.results}")
             logger.info(f"평가 저장 중: {model_name} for '{prompt[:20]}...'")
-            df.loc[index, eval_response] = eval_response
-            item[eval_response] = eval_response
-        logger.info(f"\n새로운 평가를 '{self.dataset_filepath}'에 저장합니다.")
-        df.to_csv(self.dataset_filepath, index=False, encoding='utf-8-sig')
+
+
+            eval_response_json = eval_response
+            #json.dumps([vars(r) for r in eval_response], ensure_ascii=False)
+
+
+
+            df.loc[index, response_col] = eval_response_json
+            item[response_col] = eval_response_json
+            df.to_csv(output_file, index=False, encoding='utf-8-sig')
+            logger.info(f"평가 결과: {eval_response_json}")
+        logger.info(f"\n새로운 평가를 '{output_file}'에 저장합니다.")
+       
         
         self.eval_end_time = datetime.now() 

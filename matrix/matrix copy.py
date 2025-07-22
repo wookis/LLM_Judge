@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 import json
 import os
 
-#st.set_page_config(layout="centered")
-st.set_page_config(layout="wide")
+st.set_page_config(layout="centered")
 
 # 파일 경로
 dataset_dir = os.path.join(os.path.dirname(__file__), '..', 'dataset')
@@ -27,43 +26,29 @@ with open(RESULT_PATH, encoding='utf-8') as f:
 # D1~D12, T1~T11 정의
 domains = [f'D{i}' for i in range(1, 11)]
 tasks = [f'T{i}' for i in range(1, 12)]
-levels = [f'L{i}' for i in range(1, 3)]
-
-# 각 task별로 L1, L2, L3 세 개의 level을 모두 포함하는 세로축 생성
-tasks_with_all_levels = []
-for task in tasks:
-    for level in levels:
-        if level == 'L1':
-            tasks_with_all_levels.append(f"{task} {level}")
-        tasks_with_all_levels.append(f"{level}")
-        
+levels = ['1', '2', '3']
 
 # 모델 선택
 model_names = sorted(list(set(r['model'] for r in results)))
 model = st.selectbox("모델 선택", model_names)
 
-# matrix 생성 - 각 task별로 3개의 level을 모두 포함
-matrix = np.full((len(tasks_with_all_levels), len(domains)), np.nan)
+# matrix 생성
+matrix = np.full((len(tasks), len(domains)), np.nan)
 
 for r in results:
     if r['model'] != model:
         continue
     d = r.get('domain', '')
     t = r.get('task', '')
-    l = r.get('level', '')
     try:
         d_idx = domains.index(d)
-        # task와 level을 조합한 인덱스 찾기
-        task_level_key = f"{t} {l}"
-        t_idx = tasks_with_all_levels.index(task_level_key)
+        t_idx = tasks.index(t)
         matrix[t_idx, d_idx] = r['score']
-        #matrix[t_idx, d_idx] = 0
     except ValueError:
-        print(task_level_key)
         continue
 
 # index, columns를 pd.Index로 명시적으로 변환
-index = pd.Index(tasks_with_all_levels)
+index = pd.Index(tasks)
 columns = pd.Index(domains)
 df = pd.DataFrame(matrix, index=index, columns=columns)
 
@@ -79,7 +64,7 @@ cmap = model_cmap.get(model, "gray")
 st.title(f"모델별 평가 결과: {model}")
 st.write("각 셀은 평균 점수(0~1, 소수점 3자리)입니다.")
 
-fig, ax = plt.subplots(figsize=(14, 10))  # 세로 크기 증가
+fig, ax = plt.subplots(figsize=(14, 7))
 sns.heatmap(
     df, 
     annot=True, 
@@ -111,27 +96,25 @@ st.title("모델별 평가 결과 비교")
 cols = st.columns(len(model_names))
 for idx, model in enumerate(model_names):
     # matrix 생성
-    matrix = np.full((len(tasks_with_all_levels), len(domains)), np.nan)
+    matrix = np.full((len(tasks), len(domains)), np.nan)
     for r in results:
         if r['model'] != model:
             continue
         d = r.get('domain', '')
         t = r.get('task', '')
-        l = r.get('level', '')
         try:
             d_idx = domains.index(d)
-            task_level_key = f"{t} {l}"
-            t_idx = tasks_with_all_levels.index(task_level_key)
+            t_idx = tasks.index(t)
             matrix[t_idx, d_idx] = r['score']
         except ValueError:
             continue
-    index = pd.Index(tasks_with_all_levels)
+    index = pd.Index(tasks)
     columns = pd.Index(domains)
     df = pd.DataFrame(matrix, index=index, columns=columns)
 
     with cols[idx]:
         st.subheader(model)
-        fig, ax = plt.subplots(figsize=(6, 6))  # 세로 크기 증가
+        fig, ax = plt.subplots(figsize=(6, 4))
         cmap = model_cmap.get(model, "YlGnBu")
         sns.heatmap(
             df,
@@ -165,28 +148,26 @@ for idx, model in enumerate(model_names):
 weight_type = st.selectbox("평가 비중", ["품질", "가격", "가성비"])
 
 # 1. 모델별로 matrix와 token matrix를 만듦
-model_matrices = {m: np.full((len(tasks_with_all_levels), len(domains)), np.nan) for m in model_cmap.keys()}
-token_matrices = {m: np.full((len(tasks_with_all_levels), len(domains)), np.nan) for m in model_cmap.keys()}
+model_matrices = {m: np.full((len(tasks), len(domains)), np.nan) for m in model_cmap.keys()}
+token_matrices = {m: np.full((len(tasks), len(domains)), np.nan) for m in model_cmap.keys()}
 
 for r in results:
     m = r['model']
     d = r.get('domain', '')
     t = r.get('task', '')
-    l = r.get('level', '')
     tokens = r.get('token', r.get('tokens', 0))
     try:
         d_idx = domains.index(d)
-        task_level_key = f"{t} {l}"
-        t_idx = tasks_with_all_levels.index(task_level_key)
+        t_idx = tasks.index(t)
         model_matrices[m][t_idx, d_idx] = r['score']
         token_matrices[m][t_idx, d_idx] = tokens
     except ValueError:
         continue
 
-best_values = np.full((len(tasks_with_all_levels), len(domains)), np.nan)
-best_models = np.full((len(tasks_with_all_levels), len(domains)), '', dtype=object)
+best_values = np.full((len(tasks), len(domains)), np.nan)
+best_models = np.full((len(tasks), len(domains)), '', dtype=object)
 
-for i in range(len(tasks_with_all_levels)):
+for i in range(len(tasks)):
     for j in range(len(domains)):
         cell_scores = []
         cell_tokens = []
@@ -229,14 +210,14 @@ for i in range(len(tasks_with_all_levels)):
 
 # annotation 생성
 annot = np.empty(best_values.shape, dtype=object)
-for i in range(len(tasks_with_all_levels)):
+for i in range(len(tasks)):
     for j in range(len(domains)):
         if best_models[i, j]:
             annot[i, j] = f"{best_models[i, j]}\n{best_values[i, j]:.3f}"
         else:
             annot[i, j] = ""
 
-df_best = pd.DataFrame(best_values, index=pd.Index(tasks_with_all_levels), columns=pd.Index(domains))
+df_best = pd.DataFrame(best_values, index=pd.Index(tasks), columns=pd.Index(domains))
 
 st.title(f"라우팅 품질 Matrix (최고 {weight_type} 모델)")
 if weight_type == "품질":
@@ -246,7 +227,7 @@ elif weight_type == "가격":
 elif weight_type == "가성비":
     st.write("각 셀에는 가성비(점수/비용)가 가장 높은 모델명과 그 값을 표시합니다.")
 
-fig2, ax2 = plt.subplots(figsize=(14, 10))  # 세로 크기 증가
+fig2, ax2 = plt.subplots(figsize=(14, 7))
 sns.heatmap(
     df_best,
     annot=annot,

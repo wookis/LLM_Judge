@@ -79,6 +79,7 @@ class LLMJudge:
         no: str, 
         domain: str, 
         task: str, 
+        level: str, 
         model_name: str, 
         prompt: str,
         response: str,
@@ -473,7 +474,7 @@ class LLMJudge:
         except FileNotFoundError:
             df = pd.DataFrame(dataset)
 
-        output_file = os.path.join(os.path.dirname(__file__), 'eval_feedback_midm_base.csv')
+        output_file = 'dataset/eval_feedback_midm_base.csv'
 
        
         dataset_changed = False
@@ -481,6 +482,7 @@ class LLMJudge:
             no = row.get("no")
             domain = row.get("domain")
             task = row.get("task")
+            level = row.get("level")
             prompt = row.get("prompt")
             if not prompt:
                 continue
@@ -512,6 +514,7 @@ class LLMJudge:
                 no = no,
                 domain = domain,
                 task = task,
+                level = level,
                 model_name=model_name,
                 prompt=prompt,
                 response=response,

@@ -1,2402 +1,2702 @@
 [
   {
     "no": 1,
-    "domain": "D8",
-    "task": "T7",
+    "domain": "D4",
+    "task": "T11",
+    "level": "L1",
     "model": "gpt-4o",
-    "token": 254,
-    "score": 0.432
+    "token": 140,
+    "score": 0.622
   },
   {
     "no": 1,
-    "domain": "D8",
-    "task": "T7",
+    "domain": "D4",
+    "task": "T11",
+    "level": "L1",
     "model": "midm2.x",
-    "token": 123,
-    "score": 0.831
+    "token": 243,
+    "score": 0.351
   },
   {
     "no": 1,
-    "domain": "D8",
-    "task": "T7",
-    "model": "GPT K",
-    "token": 202,
-    "score": 0.008
-  },
-  {
-    "no": 2,
-    "domain": "D2",
-    "task": "T9",
-    "model": "gpt-4o",
-    "token": 183,
-    "score": 0.032
-  },
-  {
-    "no": 2,
-    "domain": "D2",
-    "task": "T9",
-    "model": "midm2.x",
-    "token": 134,
-    "score": 0.406
-  },
-  {
-    "no": 2,
-    "domain": "D2",
-    "task": "T9",
-    "model": "GPT K",
-    "token": 165,
-    "score": 0.558
-  },
-  {
-    "no": 3,
-    "domain": "D5",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 255,
-    "score": 0.37
-  },
-  {
-    "no": 3,
-    "domain": "D5",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 134,
-    "score": 0.28
-  },
-  {
-    "no": 3,
-    "domain": "D5",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 195,
-    "score": 0.536
-  },
-  {
-    "no": 4,
-    "domain": "D10",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 214,
-    "score": 0.707
-  },
-  {
-    "no": 4,
-    "domain": "D10",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 153,
-    "score": 0.575
-  },
-  {
-    "no": 4,
-    "domain": "D10",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 132,
-    "score": 0.184
-  },
-  {
-    "no": 5,
-    "domain": "D1",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 190,
-    "score": 0.353
-  },
-  {
-    "no": 5,
-    "domain": "D1",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 234,
-    "score": 0.234
-  },
-  {
-    "no": 5,
-    "domain": "D1",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 186,
-    "score": 0.872
-  },
-  {
-    "no": 6,
-    "domain": "D5",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 250,
-    "score": 0.229
-  },
-  {
-    "no": 6,
-    "domain": "D5",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 142,
-    "score": 0.793
-  },
-  {
-    "no": 6,
-    "domain": "D5",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 247,
-    "score": 0.186
-  },
-  {
-    "no": 7,
-    "domain": "D10",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 151,
-    "score": 0.827
-  },
-  {
-    "no": 7,
-    "domain": "D10",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 175,
-    "score": 0.134
-  },
-  {
-    "no": 7,
-    "domain": "D10",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 123,
-    "score": 0.149
-  },
-  {
-    "no": 8,
-    "domain": "D3",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 152,
-    "score": 0.517
-  },
-  {
-    "no": 8,
-    "domain": "D3",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 139,
-    "score": 0.728
-  },
-  {
-    "no": 8,
-    "domain": "D3",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 239,
-    "score": 0.875
-  },
-  {
-    "no": 9,
     "domain": "D4",
-    "task": "T7",
-    "model": "gpt-4o",
-    "token": 132,
-    "score": 0.586
-  },
-  {
-    "no": 9,
-    "domain": "D4",
-    "task": "T7",
-    "model": "midm2.x",
-    "token": 127,
-    "score": 0.545
-  },
-  {
-    "no": 9,
-    "domain": "D4",
-    "task": "T7",
-    "model": "GPT K",
-    "token": 155,
-    "score": 0.764
-  },
-  {
-    "no": 10,
-    "domain": "D1",
-    "task": "T10",
-    "model": "gpt-4o",
-    "token": 203,
-    "score": 0.147
-  },
-  {
-    "no": 10,
-    "domain": "D1",
-    "task": "T10",
-    "model": "midm2.x",
-    "token": 142,
-    "score": 0.347
-  },
-  {
-    "no": 10,
-    "domain": "D1",
-    "task": "T10",
-    "model": "GPT K",
-    "token": 133,
-    "score": 0.527
-  },
-  {
-    "no": 11,
-    "domain": "D9",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 195,
-    "score": 0.626
-  },
-  {
-    "no": 11,
-    "domain": "D9",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 212,
-    "score": 0.308
-  },
-  {
-    "no": 11,
-    "domain": "D9",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 154,
-    "score": 0.757
-  },
-  {
-    "no": 12,
-    "domain": "D4",
-    "task": "T1",
-    "model": "gpt-4o",
-    "token": 239,
-    "score": 0.154
-  },
-  {
-    "no": 12,
-    "domain": "D4",
-    "task": "T1",
-    "model": "midm2.x",
-    "token": 125,
-    "score": 0.248
-  },
-  {
-    "no": 12,
-    "domain": "D4",
-    "task": "T1",
-    "model": "GPT K",
-    "token": 141,
-    "score": 0.871
-  },
-  {
-    "no": 13,
-    "domain": "D4",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 229,
-    "score": 0.717
-  },
-  {
-    "no": 13,
-    "domain": "D4",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 154,
-    "score": 0.548
-  },
-  {
-    "no": 13,
-    "domain": "D4",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 158,
-    "score": 0.362
-  },
-  {
-    "no": 14,
-    "domain": "D2",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 149,
-    "score": 0.908
-  },
-  {
-    "no": 14,
-    "domain": "D2",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 210,
-    "score": 0.317
-  },
-  {
-    "no": 14,
-    "domain": "D2",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 156,
-    "score": 0.084
-  },
-  {
-    "no": 15,
-    "domain": "D6",
-    "task": "T1",
-    "model": "gpt-4o",
-    "token": 186,
-    "score": 0.522
-  },
-  {
-    "no": 15,
-    "domain": "D6",
-    "task": "T1",
-    "model": "midm2.x",
-    "token": 194,
-    "score": 0.486
-  },
-  {
-    "no": 15,
-    "domain": "D6",
-    "task": "T1",
-    "model": "GPT K",
-    "token": 175,
-    "score": 0.325
-  },
-  {
-    "no": 16,
-    "domain": "D8",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 220,
-    "score": 0.939
-  },
-  {
-    "no": 16,
-    "domain": "D8",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 132,
-    "score": 0.22
-  },
-  {
-    "no": 16,
-    "domain": "D8",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 156,
-    "score": 0.642
-  },
-  {
-    "no": 17,
-    "domain": "D4",
-    "task": "T4",
-    "model": "gpt-4o",
-    "token": 179,
-    "score": 0.39
-  },
-  {
-    "no": 17,
-    "domain": "D4",
-    "task": "T4",
-    "model": "midm2.x",
-    "token": 241,
-    "score": 0.205
-  },
-  {
-    "no": 17,
-    "domain": "D4",
-    "task": "T4",
+    "task": "T11",
+    "level": "L2",
     "model": "GPT K",
     "token": 234,
-    "score": 0.892
-  },
-  {
-    "no": 18,
-    "domain": "D8",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 148,
-    "score": 0.83
-  },
-  {
-    "no": 18,
-    "domain": "D8",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 128,
-    "score": 0.244
-  },
-  {
-    "no": 18,
-    "domain": "D8",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 204,
-    "score": 0.704
-  },
-  {
-    "no": 19,
-    "domain": "D5",
-    "task": "T7",
-    "model": "gpt-4o",
-    "token": 149,
-    "score": 0.791
-  },
-  {
-    "no": 19,
-    "domain": "D5",
-    "task": "T7",
-    "model": "midm2.x",
-    "token": 199,
-    "score": 0.077
-  },
-  {
-    "no": 19,
-    "domain": "D5",
-    "task": "T7",
-    "model": "GPT K",
-    "token": 166,
-    "score": 0.379
-  },
-  {
-    "no": 20,
-    "domain": "D4",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 137,
-    "score": 0.491
-  },
-  {
-    "no": 20,
-    "domain": "D4",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 191,
-    "score": 0.59
-  },
-  {
-    "no": 20,
-    "domain": "D4",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 165,
-    "score": 0.809
-  },
-  {
-    "no": 21,
-    "domain": "D5",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 138,
-    "score": 0.311
-  },
-  {
-    "no": 21,
-    "domain": "D5",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 247,
-    "score": 0.977
-  },
-  {
-    "no": 21,
-    "domain": "D5",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 166,
-    "score": 0.41
-  },
-  {
-    "no": 22,
-    "domain": "D2",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 138,
-    "score": 0.128
-  },
-  {
-    "no": 22,
-    "domain": "D2",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 127,
-    "score": 0.239
-  },
-  {
-    "no": 22,
-    "domain": "D2",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 189,
-    "score": 0.81
-  },
-  {
-    "no": 23,
-    "domain": "D10",
-    "task": "T9",
-    "model": "gpt-4o",
-    "token": 220,
-    "score": 0.541
-  },
-  {
-    "no": 23,
-    "domain": "D10",
-    "task": "T9",
-    "model": "midm2.x",
-    "token": 145,
-    "score": 0.175
-  },
-  {
-    "no": 23,
-    "domain": "D10",
-    "task": "T9",
-    "model": "GPT K",
-    "token": 158,
-    "score": 0.267
-  },
-  {
-    "no": 24,
-    "domain": "D3",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 255,
-    "score": 0.66
-  },
-  {
-    "no": 24,
-    "domain": "D3",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 225,
-    "score": 0.936
-  },
-  {
-    "no": 24,
-    "domain": "D3",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 221,
-    "score": 0.538
-  },
-  {
-    "no": 25,
-    "domain": "D2",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 252,
-    "score": 0.482
-  },
-  {
-    "no": 25,
-    "domain": "D2",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 176,
-    "score": 0.978
-  },
-  {
-    "no": 25,
-    "domain": "D2",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 197,
-    "score": 0.514
-  },
-  {
-    "no": 26,
-    "domain": "D9",
-    "task": "T7",
-    "model": "gpt-4o",
-    "token": 153,
-    "score": 0.003
-  },
-  {
-    "no": 26,
-    "domain": "D9",
-    "task": "T7",
-    "model": "midm2.x",
-    "token": 133,
-    "score": 0.514
-  },
-  {
-    "no": 26,
-    "domain": "D9",
-    "task": "T7",
-    "model": "GPT K",
-    "token": 249,
-    "score": 0.61
-  },
-  {
-    "no": 27,
-    "domain": "D7",
-    "task": "T7",
-    "model": "gpt-4o",
-    "token": 233,
-    "score": 0.787
-  },
-  {
-    "no": 27,
-    "domain": "D7",
-    "task": "T7",
-    "model": "midm2.x",
-    "token": 252,
-    "score": 0.462
-  },
-  {
-    "no": 27,
-    "domain": "D7",
-    "task": "T7",
-    "model": "GPT K",
-    "token": 206,
-    "score": 0.667
-  },
-  {
-    "no": 28,
-    "domain": "D7",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 166,
-    "score": 0.455
-  },
-  {
-    "no": 28,
-    "domain": "D7",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 254,
-    "score": 0.251
-  },
-  {
-    "no": 28,
-    "domain": "D7",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 233,
-    "score": 0.063
-  },
-  {
-    "no": 29,
-    "domain": "D4",
-    "task": "T11",
-    "model": "gpt-4o",
-    "token": 241,
-    "score": 0.614
-  },
-  {
-    "no": 29,
-    "domain": "D4",
-    "task": "T11",
-    "model": "midm2.x",
-    "token": 232,
-    "score": 0.74
-  },
-  {
-    "no": 29,
-    "domain": "D4",
-    "task": "T11",
-    "model": "GPT K",
-    "token": 221,
-    "score": 0.943
-  },
-  {
-    "no": 30,
-    "domain": "D5",
-    "task": "T10",
-    "model": "gpt-4o",
-    "token": 252,
-    "score": 0.647
-  },
-  {
-    "no": 30,
-    "domain": "D5",
-    "task": "T10",
-    "model": "midm2.x",
-    "token": 179,
-    "score": 0.795
-  },
-  {
-    "no": 30,
-    "domain": "D5",
-    "task": "T10",
-    "model": "GPT K",
-    "token": 149,
-    "score": 0.264
-  },
-  {
-    "no": 31,
-    "domain": "D6",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 255,
-    "score": 0.695
-  },
-  {
-    "no": 31,
-    "domain": "D6",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 190,
-    "score": 0.281
-  },
-  {
-    "no": 31,
-    "domain": "D6",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 218,
-    "score": 0.215
-  },
-  {
-    "no": 32,
-    "domain": "D3",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 167,
-    "score": 0.66
-  },
-  {
-    "no": 32,
-    "domain": "D3",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 210,
-    "score": 0.634
-  },
-  {
-    "no": 32,
-    "domain": "D3",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 235,
-    "score": 0.373
-  },
-  {
-    "no": 33,
-    "domain": "D6",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 232,
-    "score": 0.647
-  },
-  {
-    "no": 33,
-    "domain": "D6",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 248,
-    "score": 0.124
-  },
-  {
-    "no": 33,
-    "domain": "D6",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 230,
-    "score": 0.578
-  },
-  {
-    "no": 34,
-    "domain": "D8",
-    "task": "T5",
-    "model": "gpt-4o",
-    "token": 156,
-    "score": 0.991
-  },
-  {
-    "no": 34,
-    "domain": "D8",
-    "task": "T5",
-    "model": "midm2.x",
-    "token": 194,
-    "score": 0.164
-  },
-  {
-    "no": 34,
-    "domain": "D8",
-    "task": "T5",
-    "model": "GPT K",
-    "token": 255,
-    "score": 0.596
-  },
-  {
-    "no": 35,
-    "domain": "D10",
-    "task": "T9",
-    "model": "gpt-4o",
-    "token": 178,
-    "score": 0.41
-  },
-  {
-    "no": 35,
-    "domain": "D10",
-    "task": "T9",
-    "model": "midm2.x",
-    "token": 190,
-    "score": 0.232
-  },
-  {
-    "no": 35,
-    "domain": "D10",
-    "task": "T9",
-    "model": "GPT K",
-    "token": 226,
-    "score": 0.288
-  },
-  {
-    "no": 36,
-    "domain": "D6",
-    "task": "T1",
-    "model": "gpt-4o",
-    "token": 167,
-    "score": 0.359
-  },
-  {
-    "no": 36,
-    "domain": "D6",
-    "task": "T1",
-    "model": "midm2.x",
-    "token": 239,
-    "score": 0.653
-  },
-  {
-    "no": 36,
-    "domain": "D6",
-    "task": "T1",
-    "model": "GPT K",
-    "token": 129,
-    "score": 0.028
-  },
-  {
-    "no": 37,
-    "domain": "D2",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 150,
-    "score": 0.113
-  },
-  {
-    "no": 37,
-    "domain": "D2",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 220,
-    "score": 0.815
-  },
-  {
-    "no": 37,
-    "domain": "D2",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 194,
-    "score": 0.865
-  },
-  {
-    "no": 38,
-    "domain": "D2",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 209,
-    "score": 0.477
-  },
-  {
-    "no": 38,
-    "domain": "D2",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 135,
-    "score": 0.769
-  },
-  {
-    "no": 38,
-    "domain": "D2",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 202,
-    "score": 0.138
-  },
-  {
-    "no": 39,
-    "domain": "D1",
-    "task": "T10",
-    "model": "gpt-4o",
-    "token": 199,
-    "score": 0.409
-  },
-  {
-    "no": 39,
-    "domain": "D1",
-    "task": "T10",
-    "model": "midm2.x",
-    "token": 190,
-    "score": 0.105
-  },
-  {
-    "no": 39,
-    "domain": "D1",
-    "task": "T10",
-    "model": "GPT K",
-    "token": 207,
-    "score": 0.55
-  },
-  {
-    "no": 40,
-    "domain": "D9",
-    "task": "T9",
-    "model": "gpt-4o",
-    "token": 230,
-    "score": 0.304
-  },
-  {
-    "no": 40,
-    "domain": "D9",
-    "task": "T9",
-    "model": "midm2.x",
-    "token": 198,
-    "score": 0.923
-  },
-  {
-    "no": 40,
-    "domain": "D9",
-    "task": "T9",
-    "model": "GPT K",
-    "token": 242,
-    "score": 0.972
-  },
-  {
-    "no": 41,
-    "domain": "D4",
-    "task": "T4",
-    "model": "gpt-4o",
-    "token": 254,
-    "score": 0.549
-  },
-  {
-    "no": 41,
-    "domain": "D4",
-    "task": "T4",
-    "model": "midm2.x",
-    "token": 163,
-    "score": 0.856
-  },
-  {
-    "no": 41,
-    "domain": "D4",
-    "task": "T4",
-    "model": "GPT K",
-    "token": 151,
-    "score": 0.879
-  },
-  {
-    "no": 42,
-    "domain": "D8",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 131,
-    "score": 0.798
-  },
-  {
-    "no": 42,
-    "domain": "D8",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 245,
-    "score": 0.693
-  },
-  {
-    "no": 42,
-    "domain": "D8",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 157,
-    "score": 0.945
-  },
-  {
-    "no": 43,
-    "domain": "D2",
-    "task": "T11",
-    "model": "gpt-4o",
-    "token": 165,
-    "score": 0.149
-  },
-  {
-    "no": 43,
-    "domain": "D2",
-    "task": "T11",
-    "model": "midm2.x",
-    "token": 202,
-    "score": 0.377
-  },
-  {
-    "no": 43,
-    "domain": "D2",
-    "task": "T11",
-    "model": "GPT K",
-    "token": 219,
-    "score": 0.867
-  },
-  {
-    "no": 44,
-    "domain": "D4",
-    "task": "T5",
-    "model": "gpt-4o",
-    "token": 200,
-    "score": 0.294
-  },
-  {
-    "no": 44,
-    "domain": "D4",
-    "task": "T5",
-    "model": "midm2.x",
-    "token": 179,
-    "score": 0.084
-  },
-  {
-    "no": 44,
-    "domain": "D4",
-    "task": "T5",
-    "model": "GPT K",
-    "token": 184,
-    "score": 0.15
-  },
-  {
-    "no": 45,
-    "domain": "D4",
-    "task": "T9",
-    "model": "gpt-4o",
-    "token": 151,
-    "score": 0.361
-  },
-  {
-    "no": 45,
-    "domain": "D4",
-    "task": "T9",
-    "model": "midm2.x",
-    "token": 235,
-    "score": 0.148
-  },
-  {
-    "no": 45,
-    "domain": "D4",
-    "task": "T9",
-    "model": "GPT K",
-    "token": 247,
-    "score": 0.481
-  },
-  {
-    "no": 46,
-    "domain": "D7",
-    "task": "T10",
-    "model": "gpt-4o",
-    "token": 159,
-    "score": 0.191
-  },
-  {
-    "no": 46,
-    "domain": "D7",
-    "task": "T10",
-    "model": "midm2.x",
-    "token": 230,
-    "score": 0.195
-  },
-  {
-    "no": 46,
-    "domain": "D7",
-    "task": "T10",
-    "model": "GPT K",
-    "token": 158,
-    "score": 0.529
-  },
-  {
-    "no": 47,
-    "domain": "D9",
-    "task": "T7",
-    "model": "gpt-4o",
-    "token": 133,
-    "score": 0.32
-  },
-  {
-    "no": 47,
-    "domain": "D9",
-    "task": "T7",
-    "model": "midm2.x",
-    "token": 185,
-    "score": 0.873
-  },
-  {
-    "no": 47,
-    "domain": "D9",
-    "task": "T7",
-    "model": "GPT K",
-    "token": 207,
-    "score": 0.729
-  },
-  {
-    "no": 48,
-    "domain": "D7",
-    "task": "T4",
-    "model": "gpt-4o",
-    "token": 139,
-    "score": 0.959
-  },
-  {
-    "no": 48,
-    "domain": "D7",
-    "task": "T4",
-    "model": "midm2.x",
-    "token": 135,
-    "score": 0.253
-  },
-  {
-    "no": 48,
-    "domain": "D7",
-    "task": "T4",
-    "model": "GPT K",
-    "token": 207,
-    "score": 0.985
-  },
-  {
-    "no": 49,
-    "domain": "D7",
-    "task": "T9",
-    "model": "gpt-4o",
-    "token": 243,
-    "score": 0.193
-  },
-  {
-    "no": 49,
-    "domain": "D7",
-    "task": "T9",
-    "model": "midm2.x",
-    "token": 133,
-    "score": 0.451
-  },
-  {
-    "no": 49,
-    "domain": "D7",
-    "task": "T9",
-    "model": "GPT K",
-    "token": 230,
-    "score": 0.303
-  },
-  {
-    "no": 50,
-    "domain": "D10",
-    "task": "T1",
-    "model": "gpt-4o",
-    "token": 127,
-    "score": 0.762
-  },
-  {
-    "no": 50,
-    "domain": "D10",
-    "task": "T1",
-    "model": "midm2.x",
-    "token": 230,
-    "score": 0.223
-  },
-  {
-    "no": 50,
-    "domain": "D10",
-    "task": "T1",
-    "model": "GPT K",
-    "token": 234,
-    "score": 0.708
-  },
-  {
-    "no": 51,
-    "domain": "D6",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 240,
-    "score": 0.257
-  },
-  {
-    "no": 51,
-    "domain": "D6",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 236,
-    "score": 0.322
-  },
-  {
-    "no": 51,
-    "domain": "D6",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 134,
-    "score": 0.081
-  },
-  {
-    "no": 52,
-    "domain": "D1",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 232,
-    "score": 0.266
-  },
-  {
-    "no": 52,
-    "domain": "D1",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 226,
-    "score": 0.33
-  },
-  {
-    "no": 52,
-    "domain": "D1",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 172,
-    "score": 0.2
-  },
-  {
-    "no": 53,
-    "domain": "D1",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 204,
-    "score": 0.484
-  },
-  {
-    "no": 53,
-    "domain": "D1",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 169,
-    "score": 0.55
-  },
-  {
-    "no": 53,
-    "domain": "D1",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 150,
-    "score": 0.519
-  },
-  {
-    "no": 54,
-    "domain": "D10",
-    "task": "T10",
-    "model": "gpt-4o",
-    "token": 192,
-    "score": 0.369
-  },
-  {
-    "no": 54,
-    "domain": "D10",
-    "task": "T10",
-    "model": "midm2.x",
-    "token": 147,
-    "score": 0.778
-  },
-  {
-    "no": 54,
-    "domain": "D10",
-    "task": "T10",
-    "model": "GPT K",
-    "token": 190,
-    "score": 0.715
-  },
-  {
-    "no": 55,
-    "domain": "D6",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 123,
-    "score": 0.502
-  },
-  {
-    "no": 55,
-    "domain": "D6",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 184,
-    "score": 0.301
-  },
-  {
-    "no": 55,
-    "domain": "D6",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 149,
-    "score": 0.429
-  },
-  {
-    "no": 56,
-    "domain": "D2",
-    "task": "T2",
-    "model": "gpt-4o",
-    "token": 217,
-    "score": 0.51
-  },
-  {
-    "no": 56,
-    "domain": "D2",
-    "task": "T2",
-    "model": "midm2.x",
-    "token": 139,
-    "score": 0.369
-  },
-  {
-    "no": 56,
-    "domain": "D2",
-    "task": "T2",
-    "model": "GPT K",
-    "token": 228,
-    "score": 0.493
-  },
-  {
-    "no": 57,
-    "domain": "D6",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 241,
-    "score": 0.994
-  },
-  {
-    "no": 57,
-    "domain": "D6",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 134,
-    "score": 0.72
-  },
-  {
-    "no": 57,
-    "domain": "D6",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 143,
-    "score": 0.418
-  },
-  {
-    "no": 58,
-    "domain": "D3",
-    "task": "T10",
-    "model": "gpt-4o",
-    "token": 171,
-    "score": 0.537
-  },
-  {
-    "no": 58,
-    "domain": "D3",
-    "task": "T10",
-    "model": "midm2.x",
-    "token": 126,
-    "score": 0.391
-  },
-  {
-    "no": 58,
-    "domain": "D3",
-    "task": "T10",
-    "model": "GPT K",
-    "token": 152,
-    "score": 0.717
-  },
-  {
-    "no": 59,
-    "domain": "D3",
-    "task": "T4",
-    "model": "gpt-4o",
-    "token": 220,
-    "score": 0.849
-  },
-  {
-    "no": 59,
-    "domain": "D3",
-    "task": "T4",
-    "model": "midm2.x",
-    "token": 162,
-    "score": 0.5
-  },
-  {
-    "no": 59,
-    "domain": "D3",
-    "task": "T4",
-    "model": "GPT K",
-    "token": 133,
-    "score": 0.259
-  },
-  {
-    "no": 60,
-    "domain": "D1",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 215,
-    "score": 0.954
-  },
-  {
-    "no": 60,
-    "domain": "D1",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 177,
-    "score": 0.29
-  },
-  {
-    "no": 60,
-    "domain": "D1",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 226,
-    "score": 0.34
-  },
-  {
-    "no": 61,
-    "domain": "D8",
-    "task": "T9",
-    "model": "gpt-4o",
-    "token": 175,
-    "score": 0.637
-  },
-  {
-    "no": 61,
-    "domain": "D8",
-    "task": "T9",
-    "model": "midm2.x",
-    "token": 208,
-    "score": 0.704
-  },
-  {
-    "no": 61,
-    "domain": "D8",
-    "task": "T9",
-    "model": "GPT K",
-    "token": 163,
-    "score": 0.561
-  },
-  {
-    "no": 62,
-    "domain": "D9",
-    "task": "T1",
-    "model": "gpt-4o",
-    "token": 175,
-    "score": 0.416
-  },
-  {
-    "no": 62,
-    "domain": "D9",
-    "task": "T1",
-    "model": "midm2.x",
-    "token": 234,
-    "score": 0.621
-  },
-  {
-    "no": 62,
-    "domain": "D9",
-    "task": "T1",
-    "model": "GPT K",
-    "token": 146,
-    "score": 0.269
-  },
-  {
-    "no": 63,
-    "domain": "D1",
-    "task": "T5",
-    "model": "gpt-4o",
-    "token": 162,
-    "score": 0.702
-  },
-  {
-    "no": 63,
-    "domain": "D1",
-    "task": "T5",
-    "model": "midm2.x",
-    "token": 199,
-    "score": 0.274
-  },
-  {
-    "no": 63,
-    "domain": "D1",
-    "task": "T5",
-    "model": "GPT K",
-    "token": 196,
-    "score": 0.337
-  },
-  {
-    "no": 64,
-    "domain": "D4",
-    "task": "T9",
-    "model": "gpt-4o",
-    "token": 194,
-    "score": 0.26
-  },
-  {
-    "no": 64,
-    "domain": "D4",
-    "task": "T9",
-    "model": "midm2.x",
-    "token": 249,
-    "score": 0.627
-  },
-  {
-    "no": 64,
-    "domain": "D4",
-    "task": "T9",
-    "model": "GPT K",
-    "token": 239,
-    "score": 0.83
-  },
-  {
-    "no": 65,
-    "domain": "D9",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 243,
-    "score": 0.627
-  },
-  {
-    "no": 65,
-    "domain": "D9",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 207,
-    "score": 0.95
-  },
-  {
-    "no": 65,
-    "domain": "D9",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 214,
-    "score": 0.827
-  },
-  {
-    "no": 66,
-    "domain": "D7",
-    "task": "T7",
-    "model": "gpt-4o",
-    "token": 246,
-    "score": 0.785
-  },
-  {
-    "no": 66,
-    "domain": "D7",
-    "task": "T7",
-    "model": "midm2.x",
-    "token": 217,
-    "score": 0.288
-  },
-  {
-    "no": 66,
-    "domain": "D7",
-    "task": "T7",
-    "model": "GPT K",
-    "token": 181,
-    "score": 0.956
-  },
-  {
-    "no": 67,
-    "domain": "D1",
-    "task": "T5",
-    "model": "gpt-4o",
-    "token": 210,
-    "score": 0.153
-  },
-  {
-    "no": 67,
-    "domain": "D1",
-    "task": "T5",
-    "model": "midm2.x",
-    "token": 196,
-    "score": 0.649
-  },
-  {
-    "no": 67,
-    "domain": "D1",
-    "task": "T5",
-    "model": "GPT K",
-    "token": 222,
-    "score": 0.238
-  },
-  {
-    "no": 68,
-    "domain": "D7",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 211,
     "score": 0.457
   },
   {
-    "no": 68,
-    "domain": "D7",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 166,
-    "score": 0.174
-  },
-  {
-    "no": 68,
-    "domain": "D7",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 216,
-    "score": 0.915
-  },
-  {
-    "no": 69,
-    "domain": "D7",
-    "task": "T7",
-    "model": "gpt-4o",
-    "token": 157,
-    "score": 0.81
-  },
-  {
-    "no": 69,
-    "domain": "D7",
-    "task": "T7",
-    "model": "midm2.x",
-    "token": 164,
-    "score": 0.768
-  },
-  {
-    "no": 69,
-    "domain": "D7",
-    "task": "T7",
-    "model": "GPT K",
-    "token": 148,
-    "score": 0.116
-  },
-  {
-    "no": 70,
+    "no": 2,
     "domain": "D9",
-    "task": "T1",
+    "task": "T9",
+    "level": "L1",
     "model": "gpt-4o",
-    "token": 134,
-    "score": 0.215
+    "token": 191,
+    "score": 0.123
   },
   {
-    "no": 70,
+    "no": 2,
     "domain": "D9",
-    "task": "T1",
+    "task": "T9",
+    "level": "L2",
     "model": "midm2.x",
-    "token": 186,
-    "score": 0.015
-  },
-  {
-    "no": 70,
-    "domain": "D9",
-    "task": "T1",
-    "model": "GPT K",
-    "token": 189,
-    "score": 0.006
-  },
-  {
-    "no": 71,
-    "domain": "D5",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 193,
-    "score": 0.062
-  },
-  {
-    "no": 71,
-    "domain": "D5",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 177,
-    "score": 0.769
-  },
-  {
-    "no": 71,
-    "domain": "D5",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 229,
-    "score": 0.07
-  },
-  {
-    "no": 72,
-    "domain": "D1",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 203,
-    "score": 0.436
-  },
-  {
-    "no": 72,
-    "domain": "D1",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 128,
-    "score": 0.591
-  },
-  {
-    "no": 72,
-    "domain": "D1",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 188,
-    "score": 0.074
-  },
-  {
-    "no": 73,
-    "domain": "D7",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 219,
-    "score": 0.96
-  },
-  {
-    "no": 73,
-    "domain": "D7",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 207,
-    "score": 0.425
-  },
-  {
-    "no": 73,
-    "domain": "D7",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 196,
-    "score": 0.632
-  },
-  {
-    "no": 74,
-    "domain": "D3",
-    "task": "T1",
-    "model": "gpt-4o",
-    "token": 203,
-    "score": 0.732
-  },
-  {
-    "no": 74,
-    "domain": "D3",
-    "task": "T1",
-    "model": "midm2.x",
-    "token": 205,
-    "score": 0.627
-  },
-  {
-    "no": 74,
-    "domain": "D3",
-    "task": "T1",
-    "model": "GPT K",
-    "token": 127,
-    "score": 0.431
-  },
-  {
-    "no": 75,
-    "domain": "D2",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 193,
-    "score": 0.185
-  },
-  {
-    "no": 75,
-    "domain": "D2",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 245,
-    "score": 0.982
-  },
-  {
-    "no": 75,
-    "domain": "D2",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 179,
-    "score": 0.904
-  },
-  {
-    "no": 76,
-    "domain": "D10",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 225,
-    "score": 0.387
-  },
-  {
-    "no": 76,
-    "domain": "D10",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 230,
-    "score": 0.591
-  },
-  {
-    "no": 76,
-    "domain": "D10",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 127,
-    "score": 0.588
-  },
-  {
-    "no": 77,
-    "domain": "D7",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 252,
-    "score": 0.637
-  },
-  {
-    "no": 77,
-    "domain": "D7",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 253,
-    "score": 0.4
-  },
-  {
-    "no": 77,
-    "domain": "D7",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 128,
-    "score": 0.335
-  },
-  {
-    "no": 78,
-    "domain": "D6",
-    "task": "T5",
-    "model": "gpt-4o",
-    "token": 218,
-    "score": 0.674
-  },
-  {
-    "no": 78,
-    "domain": "D6",
-    "task": "T5",
-    "model": "midm2.x",
-    "token": 133,
-    "score": 0.795
-  },
-  {
-    "no": 78,
-    "domain": "D6",
-    "task": "T5",
-    "model": "GPT K",
-    "token": 150,
-    "score": 0.983
-  },
-  {
-    "no": 79,
-    "domain": "D3",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 183,
-    "score": 0.778
-  },
-  {
-    "no": 79,
-    "domain": "D3",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 126,
-    "score": 0.157
-  },
-  {
-    "no": 79,
-    "domain": "D3",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 141,
-    "score": 0.711
-  },
-  {
-    "no": 80,
-    "domain": "D9",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 194,
-    "score": 0.662
-  },
-  {
-    "no": 80,
-    "domain": "D9",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 198,
-    "score": 0.003
-  },
-  {
-    "no": 80,
-    "domain": "D9",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 174,
-    "score": 0.611
-  },
-  {
-    "no": 81,
-    "domain": "D6",
-    "task": "T7",
-    "model": "gpt-4o",
-    "token": 126,
-    "score": 0.89
-  },
-  {
-    "no": 81,
-    "domain": "D6",
-    "task": "T7",
-    "model": "midm2.x",
-    "token": 232,
-    "score": 0.259
-  },
-  {
-    "no": 81,
-    "domain": "D6",
-    "task": "T7",
-    "model": "GPT K",
-    "token": 213,
-    "score": 0.14
-  },
-  {
-    "no": 82,
-    "domain": "D7",
-    "task": "T11",
-    "model": "gpt-4o",
-    "token": 239,
-    "score": 0.795
-  },
-  {
-    "no": 82,
-    "domain": "D7",
-    "task": "T11",
-    "model": "midm2.x",
-    "token": 254,
-    "score": 0.724
-  },
-  {
-    "no": 82,
-    "domain": "D7",
-    "task": "T11",
-    "model": "GPT K",
-    "token": 230,
-    "score": 0.71
-  },
-  {
-    "no": 83,
-    "domain": "D4",
-    "task": "T5",
-    "model": "gpt-4o",
-    "token": 166,
-    "score": 0.21
-  },
-  {
-    "no": 83,
-    "domain": "D4",
-    "task": "T5",
-    "model": "midm2.x",
-    "token": 216,
-    "score": 0.083
-  },
-  {
-    "no": 83,
-    "domain": "D4",
-    "task": "T5",
-    "model": "GPT K",
-    "token": 202,
-    "score": 0.55
-  },
-  {
-    "no": 84,
-    "domain": "D4",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 130,
-    "score": 0.362
-  },
-  {
-    "no": 84,
-    "domain": "D4",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 221,
-    "score": 0.773
-  },
-  {
-    "no": 84,
-    "domain": "D4",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 247,
-    "score": 0.16
-  },
-  {
-    "no": 85,
-    "domain": "D1",
-    "task": "T8",
-    "model": "gpt-4o",
-    "token": 145,
-    "score": 0.269
-  },
-  {
-    "no": 85,
-    "domain": "D1",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 146,
-    "score": 0.798
-  },
-  {
-    "no": 85,
-    "domain": "D1",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 139,
-    "score": 0.95
-  },
-  {
-    "no": 86,
-    "domain": "D5",
-    "task": "T11",
-    "model": "gpt-4o",
-    "token": 194,
+    "token": 248,
     "score": 0.337
   },
   {
-    "no": 86,
-    "domain": "D5",
-    "task": "T11",
-    "model": "midm2.x",
-    "token": 214,
-    "score": 0.34
-  },
-  {
-    "no": 86,
-    "domain": "D5",
-    "task": "T11",
+    "no": 2,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L1",
     "model": "GPT K",
-    "token": 256,
-    "score": 0.71
+    "token": 140,
+    "score": 0.169
   },
   {
-    "no": 87,
-    "domain": "D4",
-    "task": "T8",
+    "no": 3,
+    "domain": "D8",
+    "task": "T1",
+    "level": "L2",
     "model": "gpt-4o",
+    "token": 213,
+    "score": 0.339
+  },
+  {
+    "no": 3,
+    "domain": "D8",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 159,
+    "score": 0.524
+  },
+  {
+    "no": 3,
+    "domain": "D8",
+    "task": "T1",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 221,
+    "score": 0.977
+  },
+  {
+    "no": 4,
+    "domain": "D2",
+    "task": "T9",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 177,
+    "score": 0.964
+  },
+  {
+    "no": 4,
+    "domain": "D2",
+    "task": "T9",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 178,
+    "score": 0.047
+  },
+  {
+    "no": 4,
+    "domain": "D2",
+    "task": "T9",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 210,
+    "score": 0.175
+  },
+  {
+    "no": 5,
+    "domain": "D9",
+    "task": "T7",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 178,
+    "score": 0.161
+  },
+  {
+    "no": 5,
+    "domain": "D9",
+    "task": "T7",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 124,
+    "score": 0.737
+  },
+  {
+    "no": 5,
+    "domain": "D9",
+    "task": "T7",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 132,
+    "score": 0.907
+  },
+  {
+    "no": 6,
+    "domain": "D3",
+    "task": "T4",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 249,
+    "score": 0.082
+  },
+  {
+    "no": 6,
+    "domain": "D3",
+    "task": "T4",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 247,
+    "score": 0.745
+  },
+  {
+    "no": 6,
+    "domain": "D3",
+    "task": "T4",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 152,
+    "score": 0.833
+  },
+  {
+    "no": 7,
+    "domain": "D3",
+    "task": "T8",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 190,
+    "score": 0.017
+  },
+  {
+    "no": 7,
+    "domain": "D3",
+    "task": "T8",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 154,
+    "score": 0.302
+  },
+  {
+    "no": 7,
+    "domain": "D3",
+    "task": "T8",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 129,
+    "score": 0.183
+  },
+  {
+    "no": 8,
+    "domain": "D2",
+    "task": "T8",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 132,
+    "score": 0.932
+  },
+  {
+    "no": 8,
+    "domain": "D2",
+    "task": "T8",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 229,
+    "score": 0.456
+  },
+  {
+    "no": 8,
+    "domain": "D2",
+    "task": "T8",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 248,
+    "score": 0.203
+  },
+  {
+    "no": 9,
+    "domain": "D1",
+    "task": "T1",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 133,
+    "score": 0.673
+  },
+  {
+    "no": 9,
+    "domain": "D1",
+    "task": "T1",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 152,
+    "score": 0.98
+  },
+  {
+    "no": 9,
+    "domain": "D1",
+    "task": "T1",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 235,
+    "score": 0.839
+  },
+  {
+    "no": 10,
+    "domain": "D5",
+    "task": "T5",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 200,
+    "score": 0.333
+  },
+  {
+    "no": 10,
+    "domain": "D5",
+    "task": "T5",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 243,
+    "score": 0.409
+  },
+  {
+    "no": 10,
+    "domain": "D5",
+    "task": "T5",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 148,
+    "score": 0.498
+  },
+  {
+    "no": 11,
+    "domain": "D2",
+    "task": "T5",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 189,
+    "score": 0.026
+  },
+  {
+    "no": 11,
+    "domain": "D2",
+    "task": "T5",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 160,
+    "score": 0.107
+  },
+  {
+    "no": 11,
+    "domain": "D2",
+    "task": "T5",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 224,
+    "score": 0.528
+  },
+  {
+    "no": 12,
+    "domain": "D9",
+    "task": "T8",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 196,
+    "score": 0.52
+  },
+  {
+    "no": 12,
+    "domain": "D9",
+    "task": "T8",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 143,
+    "score": 0.226
+  },
+  {
+    "no": 12,
+    "domain": "D9",
+    "task": "T8",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 132,
+    "score": 0.009
+  },
+  {
+    "no": 13,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 197,
+    "score": 0.482
+  },
+  {
+    "no": 13,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L2",
+    "model": "midm2.x",
     "token": 230,
-    "score": 0.099
-  },
-  {
-    "no": 87,
-    "domain": "D4",
-    "task": "T8",
-    "model": "midm2.x",
-    "token": 253,
-    "score": 0.004
-  },
-  {
-    "no": 87,
-    "domain": "D4",
-    "task": "T8",
-    "model": "GPT K",
-    "token": 130,
-    "score": 0.202
-  },
-  {
-    "no": 88,
-    "domain": "D10",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 137,
-    "score": 0.024
-  },
-  {
-    "no": 88,
-    "domain": "D10",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 181,
-    "score": 0.979
-  },
-  {
-    "no": 88,
-    "domain": "D10",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 147,
-    "score": 0.128
-  },
-  {
-    "no": 89,
-    "domain": "D5",
-    "task": "T11",
-    "model": "gpt-4o",
-    "token": 255,
-    "score": 0.654
-  },
-  {
-    "no": 89,
-    "domain": "D5",
-    "task": "T11",
-    "model": "midm2.x",
-    "token": 145,
-    "score": 0.592
-  },
-  {
-    "no": 89,
-    "domain": "D5",
-    "task": "T11",
-    "model": "GPT K",
-    "token": 168,
     "score": 0.59
   },
   {
-    "no": 90,
-    "domain": "D2",
-    "task": "T7",
-    "model": "gpt-4o",
-    "token": 202,
-    "score": 0.74
-  },
-  {
-    "no": 90,
-    "domain": "D2",
-    "task": "T7",
-    "model": "midm2.x",
-    "token": 255,
-    "score": 0.94
-  },
-  {
-    "no": 90,
-    "domain": "D2",
-    "task": "T7",
+    "no": 13,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L2",
     "model": "GPT K",
-    "token": 192,
-    "score": 0.736
+    "token": 241,
+    "score": 0.944
   },
   {
-    "no": 91,
-    "domain": "D1",
-    "task": "T11",
+    "no": 14,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 159,
+    "score": 0.361
+  },
+  {
+    "no": 14,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 246,
+    "score": 0.095
+  },
+  {
+    "no": 14,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 217,
+    "score": 0.575
+  },
+  {
+    "no": 15,
+    "domain": "D10",
+    "task": "T8",
+    "level": "L1",
     "model": "gpt-4o",
     "token": 175,
-    "score": 0.366
+    "score": 0.119
   },
   {
-    "no": 91,
-    "domain": "D1",
-    "task": "T11",
+    "no": 15,
+    "domain": "D10",
+    "task": "T8",
+    "level": "L1",
     "model": "midm2.x",
-    "token": 133,
-    "score": 0.216
+    "token": 197,
+    "score": 0.69
   },
   {
-    "no": 91,
-    "domain": "D1",
-    "task": "T11",
+    "no": 15,
+    "domain": "D10",
+    "task": "T8",
+    "level": "L2",
     "model": "GPT K",
-    "token": 130,
-    "score": 0.636
-  },
-  {
-    "no": 92,
-    "domain": "D9",
-    "task": "T10",
-    "model": "gpt-4o",
-    "token": 165,
-    "score": 0.158
-  },
-  {
-    "no": 92,
-    "domain": "D9",
-    "task": "T10",
-    "model": "midm2.x",
-    "token": 250,
-    "score": 0.362
-  },
-  {
-    "no": 92,
-    "domain": "D9",
-    "task": "T10",
-    "model": "GPT K",
-    "token": 238,
-    "score": 0.106
-  },
-  {
-    "no": 93,
-    "domain": "D10",
-    "task": "T6",
-    "model": "gpt-4o",
-    "token": 203,
-    "score": 0.589
-  },
-  {
-    "no": 93,
-    "domain": "D10",
-    "task": "T6",
-    "model": "midm2.x",
-    "token": 132,
-    "score": 0.308
-  },
-  {
-    "no": 93,
-    "domain": "D10",
-    "task": "T6",
-    "model": "GPT K",
-    "token": 185,
-    "score": 0.662
-  },
-  {
-    "no": 94,
-    "domain": "D10",
-    "task": "T3",
-    "model": "gpt-4o",
-    "token": 160,
-    "score": 0.106
-  },
-  {
-    "no": 94,
-    "domain": "D10",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 138,
-    "score": 0.569
-  },
-  {
-    "no": 94,
-    "domain": "D10",
-    "task": "T3",
-    "model": "GPT K",
-    "token": 208,
-    "score": 0.676
-  },
-  {
-    "no": 95,
-    "domain": "D4",
-    "task": "T4",
-    "model": "gpt-4o",
-    "token": 230,
-    "score": 0.996
-  },
-  {
-    "no": 95,
-    "domain": "D4",
-    "task": "T4",
-    "model": "midm2.x",
-    "token": 191,
+    "token": 151,
     "score": 0.384
   },
   {
-    "no": 95,
-    "domain": "D4",
-    "task": "T4",
-    "model": "GPT K",
-    "token": 159,
-    "score": 0.15
-  },
-  {
-    "no": 96,
-    "domain": "D7",
-    "task": "T10",
+    "no": 16,
+    "domain": "D8",
+    "task": "T9",
+    "level": "L2",
     "model": "gpt-4o",
-    "token": 245,
-    "score": 0.917
+    "token": 235,
+    "score": 0.37
   },
   {
-    "no": 96,
-    "domain": "D7",
-    "task": "T10",
+    "no": 16,
+    "domain": "D8",
+    "task": "T9",
+    "level": "L1",
     "model": "midm2.x",
-    "token": 223,
-    "score": 0.258
+    "token": 141,
+    "score": 0.124
   },
   {
-    "no": 96,
-    "domain": "D7",
-    "task": "T10",
+    "no": 16,
+    "domain": "D8",
+    "task": "T9",
+    "level": "L2",
     "model": "GPT K",
-    "token": 142,
-    "score": 0.794
+    "token": 251,
+    "score": 0.25
   },
   {
-    "no": 97,
-    "domain": "D10",
-    "task": "T5",
+    "no": 17,
+    "domain": "D8",
+    "task": "T9",
+    "level": "L2",
     "model": "gpt-4o",
-    "token": 189,
-    "score": 0.43
+    "token": 156,
+    "score": 0.75
   },
   {
-    "no": 97,
-    "domain": "D10",
-    "task": "T5",
+    "no": 17,
+    "domain": "D8",
+    "task": "T9",
+    "level": "L1",
     "model": "midm2.x",
-    "token": 224,
-    "score": 0.667
+    "token": 240,
+    "score": 0.898
   },
   {
-    "no": 97,
-    "domain": "D10",
-    "task": "T5",
-    "model": "GPT K",
-    "token": 166,
-    "score": 0.211
-  },
-  {
-    "no": 98,
-    "domain": "D3",
-    "task": "T11",
-    "model": "gpt-4o",
-    "token": 149,
-    "score": 0.942
-  },
-  {
-    "no": 98,
-    "domain": "D3",
-    "task": "T11",
-    "model": "midm2.x",
-    "token": 157,
-    "score": 0.733
-  },
-  {
-    "no": 98,
-    "domain": "D3",
-    "task": "T11",
+    "no": 17,
+    "domain": "D8",
+    "task": "T9",
+    "level": "L1",
     "model": "GPT K",
     "token": 193,
-    "score": 0.481
+    "score": 0.521
   },
   {
-    "no": 99,
-    "domain": "D10",
-    "task": "T3",
+    "no": 18,
+    "domain": "D1",
+    "task": "T1",
+    "level": "L1",
     "model": "gpt-4o",
-    "token": 211,
+    "token": 150,
+    "score": 0.991
+  },
+  {
+    "no": 18,
+    "domain": "D1",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 182,
+    "score": 0.266
+  },
+  {
+    "no": 18,
+    "domain": "D1",
+    "task": "T1",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 143,
+    "score": 0.864
+  },
+  {
+    "no": 19,
+    "domain": "D5",
+    "task": "T4",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 244,
+    "score": 0.397
+  },
+  {
+    "no": 19,
+    "domain": "D5",
+    "task": "T4",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 161,
+    "score": 0.128
+  },
+  {
+    "no": 19,
+    "domain": "D5",
+    "task": "T4",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 134,
+    "score": 0.767
+  },
+  {
+    "no": 20,
+    "domain": "D10",
+    "task": "T9",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 135,
+    "score": 0.48
+  },
+  {
+    "no": 20,
+    "domain": "D10",
+    "task": "T9",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 162,
+    "score": 0.887
+  },
+  {
+    "no": 20,
+    "domain": "D10",
+    "task": "T9",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 251,
+    "score": 0.296
+  },
+  {
+    "no": 21,
+    "domain": "D6",
+    "task": "T8",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 204,
+    "score": 0.967
+  },
+  {
+    "no": 21,
+    "domain": "D6",
+    "task": "T8",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 225,
+    "score": 0.576
+  },
+  {
+    "no": 21,
+    "domain": "D6",
+    "task": "T8",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 194,
+    "score": 0.416
+  },
+  {
+    "no": 22,
+    "domain": "D3",
+    "task": "T1",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 196,
+    "score": 0.686
+  },
+  {
+    "no": 22,
+    "domain": "D3",
+    "task": "T1",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 146,
+    "score": 0.896
+  },
+  {
+    "no": 22,
+    "domain": "D3",
+    "task": "T1",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 210,
+    "score": 0.974
+  },
+  {
+    "no": 23,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 247,
+    "score": 0.972
+  },
+  {
+    "no": 23,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 244,
+    "score": 0.563
+  },
+  {
+    "no": 23,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 217,
+    "score": 0.679
+  },
+  {
+    "no": 24,
+    "domain": "D8",
+    "task": "T1",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 160,
+    "score": 0.913
+  },
+  {
+    "no": 24,
+    "domain": "D8",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 230,
+    "score": 0.394
+  },
+  {
+    "no": 24,
+    "domain": "D8",
+    "task": "T1",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 150,
+    "score": 0.982
+  },
+  {
+    "no": 25,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 240,
+    "score": 0.776
+  },
+  {
+    "no": 25,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 200,
+    "score": 0.834
+  },
+  {
+    "no": 25,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 181,
+    "score": 0.097
+  },
+  {
+    "no": 26,
+    "domain": "D7",
+    "task": "T5",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 126,
+    "score": 0.038
+  },
+  {
+    "no": 26,
+    "domain": "D7",
+    "task": "T5",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 156,
+    "score": 0.708
+  },
+  {
+    "no": 26,
+    "domain": "D7",
+    "task": "T5",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 142,
+    "score": 0.294
+  },
+  {
+    "no": 27,
+    "domain": "D7",
+    "task": "T5",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 201,
+    "score": 0.183
+  },
+  {
+    "no": 27,
+    "domain": "D7",
+    "task": "T5",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 204,
+    "score": 0.941
+  },
+  {
+    "no": 27,
+    "domain": "D7",
+    "task": "T5",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 142,
+    "score": 0.612
+  },
+  {
+    "no": 28,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 230,
+    "score": 0.198
+  },
+  {
+    "no": 28,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 241,
+    "score": 0.774
+  },
+  {
+    "no": 28,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 256,
+    "score": 0.292
+  },
+  {
+    "no": 29,
+    "domain": "D5",
+    "task": "T10",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 180,
+    "score": 0.115
+  },
+  {
+    "no": 29,
+    "domain": "D5",
+    "task": "T10",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 169,
+    "score": 0.461
+  },
+  {
+    "no": 29,
+    "domain": "D5",
+    "task": "T10",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 227,
+    "score": 0.109
+  },
+  {
+    "no": 30,
+    "domain": "D3",
+    "task": "T6",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 205,
+    "score": 0.199
+  },
+  {
+    "no": 30,
+    "domain": "D3",
+    "task": "T6",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 172,
     "score": 0.001
   },
   {
-    "no": 99,
-    "domain": "D10",
-    "task": "T3",
-    "model": "midm2.x",
-    "token": 221,
-    "score": 0.167
+    "no": 30,
+    "domain": "D3",
+    "task": "T6",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 254,
+    "score": 0.237
   },
   {
-    "no": 99,
+    "no": 31,
     "domain": "D10",
+    "task": "T2",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 251,
+    "score": 0.087
+  },
+  {
+    "no": 31,
+    "domain": "D10",
+    "task": "T2",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 176,
+    "score": 0.298
+  },
+  {
+    "no": 31,
+    "domain": "D10",
+    "task": "T2",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 238,
+    "score": 0.568
+  },
+  {
+    "no": 32,
+    "domain": "D4",
+    "task": "T7",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 130,
+    "score": 0.507
+  },
+  {
+    "no": 32,
+    "domain": "D4",
+    "task": "T7",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 154,
+    "score": 0.653
+  },
+  {
+    "no": 32,
+    "domain": "D4",
+    "task": "T7",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 176,
+    "score": 0.539
+  },
+  {
+    "no": 33,
+    "domain": "D2",
     "task": "T3",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 223,
+    "score": 0.839
+  },
+  {
+    "no": 33,
+    "domain": "D2",
+    "task": "T3",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 252,
+    "score": 0.731
+  },
+  {
+    "no": 33,
+    "domain": "D2",
+    "task": "T3",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 225,
+    "score": 0.461
+  },
+  {
+    "no": 34,
+    "domain": "D7",
+    "task": "T4",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 207,
+    "score": 0.348
+  },
+  {
+    "no": 34,
+    "domain": "D7",
+    "task": "T4",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 222,
+    "score": 0.062
+  },
+  {
+    "no": 34,
+    "domain": "D7",
+    "task": "T4",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 215,
+    "score": 0.957
+  },
+  {
+    "no": 35,
+    "domain": "D1",
+    "task": "T4",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 176,
+    "score": 0.751
+  },
+  {
+    "no": 35,
+    "domain": "D1",
+    "task": "T4",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 139,
+    "score": 0.885
+  },
+  {
+    "no": 35,
+    "domain": "D1",
+    "task": "T4",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 212,
+    "score": 0.133
+  },
+  {
+    "no": 36,
+    "domain": "D7",
+    "task": "T1",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 129,
+    "score": 0.672
+  },
+  {
+    "no": 36,
+    "domain": "D7",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 187,
+    "score": 0.719
+  },
+  {
+    "no": 36,
+    "domain": "D7",
+    "task": "T1",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 234,
+    "score": 0.189
+  },
+  {
+    "no": 37,
+    "domain": "D5",
+    "task": "T11",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 206,
+    "score": 0.527
+  },
+  {
+    "no": 37,
+    "domain": "D5",
+    "task": "T11",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 219,
+    "score": 0.345
+  },
+  {
+    "no": 37,
+    "domain": "D5",
+    "task": "T11",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 225,
+    "score": 0.748
+  },
+  {
+    "no": 38,
+    "domain": "D1",
+    "task": "T6",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 178,
+    "score": 0.169
+  },
+  {
+    "no": 38,
+    "domain": "D1",
+    "task": "T6",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 233,
+    "score": 0.265
+  },
+  {
+    "no": 38,
+    "domain": "D1",
+    "task": "T6",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 185,
+    "score": 0.909
+  },
+  {
+    "no": 39,
+    "domain": "D8",
+    "task": "T2",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 160,
+    "score": 0.555
+  },
+  {
+    "no": 39,
+    "domain": "D8",
+    "task": "T2",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 170,
+    "score": 0.459
+  },
+  {
+    "no": 39,
+    "domain": "D8",
+    "task": "T2",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 220,
+    "score": 0.141
+  },
+  {
+    "no": 40,
+    "domain": "D10",
+    "task": "T1",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 175,
+    "score": 0.646
+  },
+  {
+    "no": 40,
+    "domain": "D10",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 222,
+    "score": 0.05
+  },
+  {
+    "no": 40,
+    "domain": "D10",
+    "task": "T1",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 143,
+    "score": 0.307
+  },
+  {
+    "no": 41,
+    "domain": "D3",
+    "task": "T2",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 213,
+    "score": 0.155
+  },
+  {
+    "no": 41,
+    "domain": "D3",
+    "task": "T2",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 174,
+    "score": 0.65
+  },
+  {
+    "no": 41,
+    "domain": "D3",
+    "task": "T2",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 174,
+    "score": 0.397
+  },
+  {
+    "no": 42,
+    "domain": "D5",
+    "task": "T1",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 147,
+    "score": 0.773
+  },
+  {
+    "no": 42,
+    "domain": "D5",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 183,
+    "score": 0.622
+  },
+  {
+    "no": 42,
+    "domain": "D5",
+    "task": "T1",
+    "level": "L2",
     "model": "GPT K",
     "token": 198,
-    "score": 0.005
+    "score": 0.585
   },
   {
-    "no": 100,
+    "no": 43,
+    "domain": "D2",
+    "task": "T2",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 222,
+    "score": 0.572
+  },
+  {
+    "no": 43,
+    "domain": "D2",
+    "task": "T2",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 187,
+    "score": 0.804
+  },
+  {
+    "no": 43,
+    "domain": "D2",
+    "task": "T2",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 251,
+    "score": 0.685
+  },
+  {
+    "no": 44,
+    "domain": "D2",
+    "task": "T6",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 181,
+    "score": 0.756
+  },
+  {
+    "no": 44,
+    "domain": "D2",
+    "task": "T6",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 178,
+    "score": 0.954
+  },
+  {
+    "no": 44,
+    "domain": "D2",
+    "task": "T6",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 159,
+    "score": 0.293
+  },
+  {
+    "no": 45,
+    "domain": "D2",
+    "task": "T10",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 227,
+    "score": 0.853
+  },
+  {
+    "no": 45,
+    "domain": "D2",
+    "task": "T10",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 254,
+    "score": 0.841
+  },
+  {
+    "no": 45,
+    "domain": "D2",
+    "task": "T10",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 235,
+    "score": 0.615
+  },
+  {
+    "no": 46,
+    "domain": "D4",
+    "task": "T5",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 133,
+    "score": 0.675
+  },
+  {
+    "no": 46,
+    "domain": "D4",
+    "task": "T5",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 144,
+    "score": 0.932
+  },
+  {
+    "no": 46,
+    "domain": "D4",
+    "task": "T5",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 240,
+    "score": 0.194
+  },
+  {
+    "no": 47,
+    "domain": "D10",
+    "task": "T11",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 200,
+    "score": 0.198
+  },
+  {
+    "no": 47,
+    "domain": "D10",
+    "task": "T11",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 163,
+    "score": 0.597
+  },
+  {
+    "no": 47,
+    "domain": "D10",
+    "task": "T11",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 218,
+    "score": 0.46
+  },
+  {
+    "no": 48,
+    "domain": "D4",
+    "task": "T2",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 225,
+    "score": 0.844
+  },
+  {
+    "no": 48,
+    "domain": "D4",
+    "task": "T2",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 126,
+    "score": 0.813
+  },
+  {
+    "no": 48,
+    "domain": "D4",
+    "task": "T2",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 136,
+    "score": 0.429
+  },
+  {
+    "no": 49,
+    "domain": "D8",
+    "task": "T4",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 241,
+    "score": 0.915
+  },
+  {
+    "no": 49,
+    "domain": "D8",
+    "task": "T4",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 210,
+    "score": 0.408
+  },
+  {
+    "no": 49,
+    "domain": "D8",
+    "task": "T4",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 196,
+    "score": 0.08
+  },
+  {
+    "no": 50,
+    "domain": "D4",
+    "task": "T11",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 177,
+    "score": 0.172
+  },
+  {
+    "no": 50,
+    "domain": "D4",
+    "task": "T11",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 146,
+    "score": 0.567
+  },
+  {
+    "no": 50,
+    "domain": "D4",
+    "task": "T11",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 251,
+    "score": 0.232
+  },
+  {
+    "no": 51,
     "domain": "D5",
     "task": "T7",
+    "level": "L1",
     "model": "gpt-4o",
-    "token": 228,
+    "token": 227,
+    "score": 0.359
+  },
+  {
+    "no": 51,
+    "domain": "D5",
+    "task": "T7",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 187,
+    "score": 0.823
+  },
+  {
+    "no": 51,
+    "domain": "D5",
+    "task": "T7",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 222,
+    "score": 0.607
+  },
+  {
+    "no": 52,
+    "domain": "D6",
+    "task": "T8",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 139,
+    "score": 0.557
+  },
+  {
+    "no": 52,
+    "domain": "D6",
+    "task": "T8",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 202,
+    "score": 0.195
+  },
+  {
+    "no": 52,
+    "domain": "D6",
+    "task": "T8",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 225,
+    "score": 0.144
+  },
+  {
+    "no": 53,
+    "domain": "D6",
+    "task": "T7",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 123,
+    "score": 0.204
+  },
+  {
+    "no": 53,
+    "domain": "D6",
+    "task": "T7",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 183,
+    "score": 0.93
+  },
+  {
+    "no": 53,
+    "domain": "D6",
+    "task": "T7",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 152,
+    "score": 0.592
+  },
+  {
+    "no": 54,
+    "domain": "D5",
+    "task": "T1",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 247,
+    "score": 0.972
+  },
+  {
+    "no": 54,
+    "domain": "D5",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 211,
+    "score": 0.597
+  },
+  {
+    "no": 54,
+    "domain": "D5",
+    "task": "T1",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 143,
+    "score": 0.864
+  },
+  {
+    "no": 55,
+    "domain": "D6",
+    "task": "T10",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 190,
+    "score": 0.805
+  },
+  {
+    "no": 55,
+    "domain": "D6",
+    "task": "T10",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 243,
+    "score": 0.131
+  },
+  {
+    "no": 55,
+    "domain": "D6",
+    "task": "T10",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 193,
+    "score": 0.946
+  },
+  {
+    "no": 56,
+    "domain": "D9",
+    "task": "T8",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 147,
+    "score": 0.126
+  },
+  {
+    "no": 56,
+    "domain": "D9",
+    "task": "T8",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 244,
+    "score": 0.963
+  },
+  {
+    "no": 56,
+    "domain": "D9",
+    "task": "T8",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 136,
+    "score": 0.657
+  },
+  {
+    "no": 57,
+    "domain": "D5",
+    "task": "T9",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 161,
+    "score": 0.566
+  },
+  {
+    "no": 57,
+    "domain": "D5",
+    "task": "T9",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 198,
+    "score": 0.647
+  },
+  {
+    "no": 57,
+    "domain": "D5",
+    "task": "T9",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 138,
+    "score": 0.086
+  },
+  {
+    "no": 58,
+    "domain": "D7",
+    "task": "T2",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 198,
+    "score": 0.045
+  },
+  {
+    "no": 58,
+    "domain": "D7",
+    "task": "T2",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 196,
+    "score": 0.333
+  },
+  {
+    "no": 58,
+    "domain": "D7",
+    "task": "T2",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 194,
+    "score": 0.837
+  },
+  {
+    "no": 59,
+    "domain": "D3",
+    "task": "T8",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 202,
+    "score": 0.206
+  },
+  {
+    "no": 59,
+    "domain": "D3",
+    "task": "T8",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 239,
+    "score": 0.575
+  },
+  {
+    "no": 59,
+    "domain": "D3",
+    "task": "T8",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 250,
+    "score": 0.767
+  },
+  {
+    "no": 60,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 248,
+    "score": 0.522
+  },
+  {
+    "no": 60,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 203,
+    "score": 0.59
+  },
+  {
+    "no": 60,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 135,
+    "score": 0.692
+  },
+  {
+    "no": 61,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 212,
+    "score": 0.354
+  },
+  {
+    "no": 61,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 148,
+    "score": 0.265
+  },
+  {
+    "no": 61,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 175,
+    "score": 0.73
+  },
+  {
+    "no": 62,
+    "domain": "D3",
+    "task": "T9",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 215,
+    "score": 0.462
+  },
+  {
+    "no": 62,
+    "domain": "D3",
+    "task": "T9",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 208,
+    "score": 0.173
+  },
+  {
+    "no": 62,
+    "domain": "D3",
+    "task": "T9",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 221,
+    "score": 0.645
+  },
+  {
+    "no": 63,
+    "domain": "D6",
+    "task": "T8",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 210,
+    "score": 0.125
+  },
+  {
+    "no": 63,
+    "domain": "D6",
+    "task": "T8",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 133,
+    "score": 0.683
+  },
+  {
+    "no": 63,
+    "domain": "D6",
+    "task": "T8",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 232,
+    "score": 0.391
+  },
+  {
+    "no": 64,
+    "domain": "D3",
+    "task": "T5",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 159,
+    "score": 0.408
+  },
+  {
+    "no": 64,
+    "domain": "D3",
+    "task": "T5",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 235,
+    "score": 0.562
+  },
+  {
+    "no": 64,
+    "domain": "D3",
+    "task": "T5",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 188,
+    "score": 0.763
+  },
+  {
+    "no": 65,
+    "domain": "D3",
+    "task": "T1",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 165,
+    "score": 0.283
+  },
+  {
+    "no": 65,
+    "domain": "D3",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 244,
+    "score": 0.149
+  },
+  {
+    "no": 65,
+    "domain": "D3",
+    "task": "T1",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 152,
+    "score": 0.996
+  },
+  {
+    "no": 66,
+    "domain": "D5",
+    "task": "T11",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 243,
+    "score": 0.056
+  },
+  {
+    "no": 66,
+    "domain": "D5",
+    "task": "T11",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 166,
+    "score": 0.903
+  },
+  {
+    "no": 66,
+    "domain": "D5",
+    "task": "T11",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 253,
+    "score": 0.78
+  },
+  {
+    "no": 67,
+    "domain": "D4",
+    "task": "T2",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 178,
+    "score": 0.134
+  },
+  {
+    "no": 67,
+    "domain": "D4",
+    "task": "T2",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 233,
+    "score": 0.131
+  },
+  {
+    "no": 67,
+    "domain": "D4",
+    "task": "T2",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 147,
+    "score": 0.484
+  },
+  {
+    "no": 68,
+    "domain": "D8",
+    "task": "T9",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 188,
+    "score": 0.97
+  },
+  {
+    "no": 68,
+    "domain": "D8",
+    "task": "T9",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 148,
+    "score": 0.827
+  },
+  {
+    "no": 68,
+    "domain": "D8",
+    "task": "T9",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 221,
+    "score": 0.118
+  },
+  {
+    "no": 69,
+    "domain": "D7",
+    "task": "T1",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 237,
+    "score": 0.09
+  },
+  {
+    "no": 69,
+    "domain": "D7",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 179,
+    "score": 0.152
+  },
+  {
+    "no": 69,
+    "domain": "D7",
+    "task": "T1",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 131,
+    "score": 0.885
+  },
+  {
+    "no": 70,
+    "domain": "D2",
+    "task": "T10",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 199,
+    "score": 0.204
+  },
+  {
+    "no": 70,
+    "domain": "D2",
+    "task": "T10",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 241,
+    "score": 0.318
+  },
+  {
+    "no": 70,
+    "domain": "D2",
+    "task": "T10",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 237,
+    "score": 0.308
+  },
+  {
+    "no": 71,
+    "domain": "D3",
+    "task": "T3",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 211,
+    "score": 0.341
+  },
+  {
+    "no": 71,
+    "domain": "D3",
+    "task": "T3",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 127,
+    "score": 0.59
+  },
+  {
+    "no": 71,
+    "domain": "D3",
+    "task": "T3",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 168,
+    "score": 0.836
+  },
+  {
+    "no": 72,
+    "domain": "D9",
+    "task": "T4",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 170,
+    "score": 0.1
+  },
+  {
+    "no": 72,
+    "domain": "D9",
+    "task": "T4",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 210,
+    "score": 0.98
+  },
+  {
+    "no": 72,
+    "domain": "D9",
+    "task": "T4",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 187,
+    "score": 0.786
+  },
+  {
+    "no": 73,
+    "domain": "D3",
+    "task": "T9",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 152,
+    "score": 0.034
+  },
+  {
+    "no": 73,
+    "domain": "D3",
+    "task": "T9",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 142,
+    "score": 0.202
+  },
+  {
+    "no": 73,
+    "domain": "D3",
+    "task": "T9",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 149,
+    "score": 0.141
+  },
+  {
+    "no": 74,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 247,
+    "score": 0.877
+  },
+  {
+    "no": 74,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 231,
+    "score": 0.377
+  },
+  {
+    "no": 74,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 234,
+    "score": 0.059
+  },
+  {
+    "no": 75,
+    "domain": "D10",
+    "task": "T1",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 197,
+    "score": 0.62
+  },
+  {
+    "no": 75,
+    "domain": "D10",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 123,
+    "score": 0.501
+  },
+  {
+    "no": 75,
+    "domain": "D10",
+    "task": "T1",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 126,
+    "score": 0.659
+  },
+  {
+    "no": 76,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 168,
+    "score": 0.706
+  },
+  {
+    "no": 76,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 138,
+    "score": 0.857
+  },
+  {
+    "no": 76,
+    "domain": "D7",
+    "task": "T7",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 234,
+    "score": 0.845
+  },
+  {
+    "no": 77,
+    "domain": "D10",
+    "task": "T3",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 139,
+    "score": 0.232
+  },
+  {
+    "no": 77,
+    "domain": "D10",
+    "task": "T3",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 184,
+    "score": 0.478
+  },
+  {
+    "no": 77,
+    "domain": "D10",
+    "task": "T3",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 190,
+    "score": 0.379
+  },
+  {
+    "no": 78,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 143,
+    "score": 0.925
+  },
+  {
+    "no": 78,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 179,
+    "score": 0.813
+  },
+  {
+    "no": 78,
+    "domain": "D9",
+    "task": "T9",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 207,
+    "score": 0.117
+  },
+  {
+    "no": 79,
+    "domain": "D4",
+    "task": "T7",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 226,
+    "score": 0.517
+  },
+  {
+    "no": 79,
+    "domain": "D4",
+    "task": "T7",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 236,
+    "score": 0.037
+  },
+  {
+    "no": 79,
+    "domain": "D4",
+    "task": "T7",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 195,
+    "score": 0.785
+  },
+  {
+    "no": 80,
+    "domain": "D7",
+    "task": "T11",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 236,
+    "score": 0.646
+  },
+  {
+    "no": 80,
+    "domain": "D7",
+    "task": "T11",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 200,
+    "score": 0.658
+  },
+  {
+    "no": 80,
+    "domain": "D7",
+    "task": "T11",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 209,
+    "score": 0.494
+  },
+  {
+    "no": 81,
+    "domain": "D10",
+    "task": "T3",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 142,
+    "score": 0.48
+  },
+  {
+    "no": 81,
+    "domain": "D10",
+    "task": "T3",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 174,
+    "score": 0.398
+  },
+  {
+    "no": 81,
+    "domain": "D10",
+    "task": "T3",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 241,
+    "score": 0.232
+  },
+  {
+    "no": 82,
+    "domain": "D7",
+    "task": "T5",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 242,
+    "score": 0.523
+  },
+  {
+    "no": 82,
+    "domain": "D7",
+    "task": "T5",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 187,
+    "score": 0.52
+  },
+  {
+    "no": 82,
+    "domain": "D7",
+    "task": "T5",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 156,
+    "score": 0.279
+  },
+  {
+    "no": 83,
+    "domain": "D3",
+    "task": "T11",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 221,
+    "score": 0.873
+  },
+  {
+    "no": 83,
+    "domain": "D3",
+    "task": "T11",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 236,
+    "score": 0.758
+  },
+  {
+    "no": 83,
+    "domain": "D3",
+    "task": "T11",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 128,
+    "score": 0.107
+  },
+  {
+    "no": 84,
+    "domain": "D3",
+    "task": "T6",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 218,
+    "score": 0.277
+  },
+  {
+    "no": 84,
+    "domain": "D3",
+    "task": "T6",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 236,
+    "score": 0.942
+  },
+  {
+    "no": 84,
+    "domain": "D3",
+    "task": "T6",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 233,
+    "score": 0.743
+  },
+  {
+    "no": 85,
+    "domain": "D5",
+    "task": "T7",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 189,
+    "score": 0.055
+  },
+  {
+    "no": 85,
+    "domain": "D5",
+    "task": "T7",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 254,
+    "score": 0.553
+  },
+  {
+    "no": 85,
+    "domain": "D5",
+    "task": "T7",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 224,
+    "score": 0.173
+  },
+  {
+    "no": 86,
+    "domain": "D4",
+    "task": "T6",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 157,
+    "score": 0.356
+  },
+  {
+    "no": 86,
+    "domain": "D4",
+    "task": "T6",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 232,
+    "score": 0.579
+  },
+  {
+    "no": 86,
+    "domain": "D4",
+    "task": "T6",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 213,
+    "score": 0.251
+  },
+  {
+    "no": 87,
+    "domain": "D7",
+    "task": "T6",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 215,
+    "score": 0.088
+  },
+  {
+    "no": 87,
+    "domain": "D7",
+    "task": "T6",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 201,
+    "score": 0.913
+  },
+  {
+    "no": 87,
+    "domain": "D7",
+    "task": "T6",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 158,
+    "score": 0.852
+  },
+  {
+    "no": 88,
+    "domain": "D8",
+    "task": "T2",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 165,
+    "score": 0.496
+  },
+  {
+    "no": 88,
+    "domain": "D8",
+    "task": "T2",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 244,
+    "score": 0.962
+  },
+  {
+    "no": 88,
+    "domain": "D8",
+    "task": "T2",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 186,
+    "score": 0.257
+  },
+  {
+    "no": 89,
+    "domain": "D6",
+    "task": "T9",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 246,
+    "score": 0.605
+  },
+  {
+    "no": 89,
+    "domain": "D6",
+    "task": "T9",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 211,
+    "score": 0.977
+  },
+  {
+    "no": 89,
+    "domain": "D6",
+    "task": "T9",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 243,
+    "score": 0.913
+  },
+  {
+    "no": 90,
+    "domain": "D5",
+    "task": "T2",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 206,
+    "score": 0.931
+  },
+  {
+    "no": 90,
+    "domain": "D5",
+    "task": "T2",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 185,
+    "score": 0.586
+  },
+  {
+    "no": 90,
+    "domain": "D5",
+    "task": "T2",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 161,
+    "score": 0.505
+  },
+  {
+    "no": 91,
+    "domain": "D6",
+    "task": "T9",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 252,
+    "score": 0.104
+  },
+  {
+    "no": 91,
+    "domain": "D6",
+    "task": "T9",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 164,
+    "score": 0.592
+  },
+  {
+    "no": 91,
+    "domain": "D6",
+    "task": "T9",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 144,
+    "score": 0.748
+  },
+  {
+    "no": 92,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 254,
+    "score": 0.392
+  },
+  {
+    "no": 92,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 162,
+    "score": 0.333
+  },
+  {
+    "no": 92,
+    "domain": "D6",
+    "task": "T2",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 211,
+    "score": 0.414
+  },
+  {
+    "no": 93,
+    "domain": "D10",
+    "task": "T5",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 229,
+    "score": 0.079
+  },
+  {
+    "no": 93,
+    "domain": "D10",
+    "task": "T5",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 243,
+    "score": 0.661
+  },
+  {
+    "no": 93,
+    "domain": "D10",
+    "task": "T5",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 254,
+    "score": 0.898
+  },
+  {
+    "no": 94,
+    "domain": "D3",
+    "task": "T6",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 138,
+    "score": 0.296
+  },
+  {
+    "no": 94,
+    "domain": "D3",
+    "task": "T6",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 144,
+    "score": 0.01
+  },
+  {
+    "no": 94,
+    "domain": "D3",
+    "task": "T6",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 237,
     "score": 0.06
   },
   {
-    "no": 100,
+    "no": 95,
     "domain": "D5",
-    "task": "T7",
+    "task": "T10",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 230,
+    "score": 0.943
+  },
+  {
+    "no": 95,
+    "domain": "D5",
+    "task": "T10",
+    "level": "L1",
     "model": "midm2.x",
-    "token": 213,
-    "score": 0.8
+    "token": 127,
+    "score": 0.172
+  },
+  {
+    "no": 95,
+    "domain": "D5",
+    "task": "T10",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 236,
+    "score": 0.06
+  },
+  {
+    "no": 96,
+    "domain": "D4",
+    "task": "T6",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 144,
+    "score": 0.011
+  },
+  {
+    "no": 96,
+    "domain": "D4",
+    "task": "T6",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 229,
+    "score": 0.124
+  },
+  {
+    "no": 96,
+    "domain": "D4",
+    "task": "T6",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 240,
+    "score": 0.196
+  },
+  {
+    "no": 97,
+    "domain": "D4",
+    "task": "T1",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 242,
+    "score": 0.992
+  },
+  {
+    "no": 97,
+    "domain": "D4",
+    "task": "T1",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 157,
+    "score": 0.985
+  },
+  {
+    "no": 97,
+    "domain": "D4",
+    "task": "T1",
+    "level": "L2",
+    "model": "GPT K",
+    "token": 171,
+    "score": 0.058
+  },
+  {
+    "no": 98,
+    "domain": "D3",
+    "task": "T9",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 148,
+    "score": 0.788
+  },
+  {
+    "no": 98,
+    "domain": "D3",
+    "task": "T9",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 230,
+    "score": 0.476
+  },
+  {
+    "no": 98,
+    "domain": "D3",
+    "task": "T9",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 233,
+    "score": 0.629
+  },
+  {
+    "no": 99,
+    "domain": "D3",
+    "task": "T11",
+    "level": "L2",
+    "model": "gpt-4o",
+    "token": 156,
+    "score": 0.171
+  },
+  {
+    "no": 99,
+    "domain": "D3",
+    "task": "T11",
+    "level": "L2",
+    "model": "midm2.x",
+    "token": 227,
+    "score": 0.94
+  },
+  {
+    "no": 99,
+    "domain": "D3",
+    "task": "T11",
+    "level": "L1",
+    "model": "GPT K",
+    "token": 239,
+    "score": 0.605
   },
   {
     "no": 100,
-    "domain": "D5",
-    "task": "T7",
+    "domain": "D8",
+    "task": "T10",
+    "level": "L1",
+    "model": "gpt-4o",
+    "token": 195,
+    "score": 0.802
+  },
+  {
+    "no": 100,
+    "domain": "D8",
+    "task": "T10",
+    "level": "L1",
+    "model": "midm2.x",
+    "token": 239,
+    "score": 0.48
+  },
+  {
+    "no": 100,
+    "domain": "D8",
+    "task": "T10",
+    "level": "L2",
     "model": "GPT K",
-    "token": 204,
-    "score": 0.876
+    "token": 230,
+    "score": 0.675
   }
 ]

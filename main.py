@@ -3,6 +3,7 @@ from llm_judge.core import LLMJudge, EvaluationCriteria
 from llm_judge.llm_interfaces import OpenAILLM, AnthropicLLM
 from dotenv import load_dotenv
 from utils.logger import logger
+from dataset.parser_result import parse_eval_feedback_to_results
 
 load_dotenv()
 
@@ -21,22 +22,21 @@ def main():
     judge.add_criteria(EvaluationCriteria(name="스타일", description="지정된 스타일(예: 전문가, 친근함)을 잘 따르는가?", max_score=5.0))
     judge.add_criteria(EvaluationCriteria(name="총점", description="정확성, 완결성, 스타일 점수에 가중치를 포함한 최종 점수를 0-1사이 소수점 3자리로 계산해주세요.", max_score=1.0))
 
-    # 3. 평가할 LLM 모델 추가
+    # 3. 평가할 LLM 모델 및 데이터셋 추가
     try:
         gpt4_o = OpenAILLM(model_name="gpt-4o")
-        #midm2 = OpenAILLM(model_name="midm2")
-        #GPT_K = OpenAILLM(model_name="GPT_K")
         #claude3_opus = AnthropicLLM(model_name="claude-3-opus-20240229")
         judge.add_model(gpt4_o)
-        #judge.add_model(midm2)
-        #judge.add_model(GPT_K)
-        #judge.add_model(claude3_opus)
+        #judge.add_model(midm-mini-inst-2.3.1)
+        #judge.add_model(midm-pro-inst-2.3)
+        #judge.add_model(llama-3-1-74b)
 
         # 4. Judge용 모델 설정 (예: GPT-4o를 심판으로 사용)
         judge_model = gpt4_o
 
         # 5. 평가 데이터셋 로드
-        dataset = judge.load_dataset("dataset/eval_dataset_midm_base.csv")
+        #dataset = judge.load_dataset("dataset/3.eval_data/702-samples-eval_midm-pro-inst-2.3.csv")
+        dataset = judge.load_dataset("dataset/3.eval_data/702-samples-eval_gpt-4o.csv")
         
         if dataset:
             #6. 응답셋 생성 
@@ -49,12 +49,18 @@ def main():
             judge.run_evaluation_on_dataset(dataset, judge_model)
             
             #8. 결과 요약 및 저장
-            #summary = judge.get_results_summary()
-            #print("\n[종합 요약]")
-            #print(json.dumps(summary, indent=2, ensure_ascii=False))
-            
-            #judge.save_results("evaluation_results_from_dataset.json")
-            #print("\n평가 결과가 'evaluation_results_from_dataset.json' 파일에 저장되었습니다.")
+            logger.info("--- 평가 결과 파싱 시작 ---")
+            csv_files = [
+            "dataset/4.eval_result_data/702-samples-eval_feedback_midm-mini-inst-2.3.1.csv",
+            "dataset/4.eval_result_data/702-samples-eval_feedback_midm-base-inst-2.3.2.csv",
+            "dataset/4.eval_result_data/702-samples-eval_feedback_midm-pro-inst-2.3.csv",
+            "dataset/4.eval_result_data/702-samples-eval_feedback_llama-3-1-74b.csv"
+            ]
+            output_file = "dataset/5.matrix_data/702-samples-eval_result_all.json"
+
+            # 모든 CSV 파일을 합쳐서 하나의 JSON 파일로 저장
+            results = parse_eval_feedback_to_results(csv_files, output_file)
+            logger.info(f"파싱 완료: {len(results)}개의 결과 생성")
 
     except (ValueError, ImportError) as e:
         print(f"오류: {e}")

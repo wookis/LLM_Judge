@@ -5,6 +5,7 @@ mom/
 
 temp
 dataset
+log
 
 .DS_Store
 .vscode

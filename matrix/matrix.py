@@ -10,8 +10,8 @@ import os
 st.set_page_config(layout="wide")
 
 # 파일 경로
-dataset_dir = os.path.join(os.path.dirname(__file__), '..', 'dataset')
-result_files = [f for f in os.listdir(dataset_dir) if f.startswith('eval_results_') and f.endswith('.json')]
+dataset_dir = os.path.join(os.path.dirname(__file__), '..', 'dataset/5.matrix_data')
+result_files = [f for f in os.listdir(dataset_dir) if f.startswith('702-') and f.endswith('.json')]
 
 if not result_files:
     st.error('평가 결과 파일이 없습니다.')
@@ -67,12 +67,16 @@ index = pd.Index(tasks_with_all_levels)
 columns = pd.Index(domains)
 df = pd.DataFrame(matrix, index=index, columns=columns)
 
-# 모델별 컬러맵 지정
-model_cmap = {
-    "gpt-4o": "Oranges",
-    "midm2.x": "Blues",
-    "GPT K": "Greens"
-}
+# 모델별 컬러맵 배열 정의 (seaborn에서 사용 가능한 컬러맵)
+model_colors = ["Reds", "Blues", "Greens", "Oranges"]
+
+# 모델별 컬러맵 지정 (순서대로 색상 할당)
+model_cmap = {}
+for i, model in enumerate(model_names):
+    if i < len(model_colors):
+        model_cmap[model] = model_colors[i]
+    else:
+        model_cmap[model] = "gray"  # 기본값
 #cmap = model_cmap.get(model, "YlGnBu")
 cmap = model_cmap.get(model, "gray")
 
@@ -165,8 +169,8 @@ for idx, model in enumerate(model_names):
 weight_type = st.selectbox("평가 비중", ["품질", "가격", "가성비"])
 
 # 1. 모델별로 matrix와 token matrix를 만듦
-model_matrices = {m: np.full((len(tasks_with_all_levels), len(domains)), np.nan) for m in model_cmap.keys()}
-token_matrices = {m: np.full((len(tasks_with_all_levels), len(domains)), np.nan) for m in model_cmap.keys()}
+model_matrices = {m: np.full((len(tasks_with_all_levels), len(domains)), np.nan) for m in model_names}
+token_matrices = {m: np.full((len(tasks_with_all_levels), len(domains)), np.nan) for m in model_names}
 
 for r in results:
     m = r['model']
@@ -190,7 +194,7 @@ for i in range(len(tasks_with_all_levels)):
     for j in range(len(domains)):
         cell_scores = []
         cell_tokens = []
-        for m in model_cmap.keys():
+        for m in model_names:
             score = model_matrices[m][i, j]
             token = token_matrices[m][i, j]
             cell_scores.append(score)
@@ -204,7 +208,7 @@ for i in range(len(tasks_with_all_levels)):
             else:
                 idx = np.nanargmax(cell_scores)
                 best_values[i, j] = cell_scores[idx]
-                best_models[i, j] = list(model_cmap.keys())[idx]
+                best_models[i, j] = model_names[idx]
         elif weight_type == "가격":
             valid = (cell_tokens > 0)
             if not np.any(valid):
@@ -213,7 +217,7 @@ for i in range(len(tasks_with_all_levels)):
             else:
                 idx = np.argmin(cell_tokens[valid])
                 best_values[i, j] = cell_tokens[valid][idx]
-                best_models[i, j] = np.array(list(model_cmap.keys()))[valid][idx]
+                best_models[i, j] = np.array(model_names)[valid][idx]
         elif weight_type == "가성비":
             valid = (cell_tokens > 0)
             ratio = np.zeros_like(cell_scores)
@@ -225,7 +229,7 @@ for i in range(len(tasks_with_all_levels)):
             else:
                 idx = np.nanargmax(ratio)
                 best_values[i, j] = ratio[idx]
-                best_models[i, j] = list(model_cmap.keys())[idx]
+                best_models[i, j] = model_names[idx]
 
 # annotation 생성
 annot = np.empty(best_values.shape, dtype=object)

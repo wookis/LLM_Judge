@@ -1,5 +1,5 @@
 import os
-from typing import Optional
+from typing import Optional, Any
 from .core import LLMInterface
 from utils.logger import logger
 
@@ -21,17 +21,39 @@ class OpenAILLM(LLMInterface):
         self.model_name = model_name
         self.client = OpenAI(api_key=self.api_key)
 
-    def generate_response(self, prompt: str) -> str:
+    def generate_response(self, prompt: str) -> Any:
         logger.debug(f"{self.model_name} 연동")
         try:
-            response = self.client.chat.completions.create(
+            model_response = self.client.chat.completions.create(
                 model=self.model_name,
                 messages=[{"role": "user", "content": prompt}]
             )
-            return response.choices[0].message.content or ""  
+            # # response 객체에서 content 추출
+            # if model_response is not None:
+            #     try:
+            #         if hasattr(model_response, 'choices') and model_response.choices and hasattr(model_response.choices[0], 'message'):
+            #             # OpenAI 응답 형식
+            #             response = model_response.choices[0].message.content or ""
+            #         elif hasattr(model_response, 'content') and model_response.content:
+            #             # Anthropic 응답 형식
+            #             if isinstance(model_response.content, list) and len(model_response.content) > 0:
+            #                 response = model_response.content[0].text
+            #             else:
+            #                 response = str(model_response.content)
+            #         else:
+            #             response = str(model_response)
+            #     except Exception as e:
+            #         logger.error(f"Response parsing error: {e}")
+            #         response = str(model_response)
+            # else:
+            #     response = "Error: Model returned None"
+
+                
+            return model_response.choices[0].message.content or ""  
             #return response 
         except Exception as e:
-            return f"Error calling OpenAI API: {e}"
+            logger.error(f"Error calling OpenAI API: {e}")
+            return None
 
     def get_model_name(self) -> str:
         return self.model_name
@@ -51,7 +73,7 @@ class AnthropicLLM(LLMInterface):
         self.model_name = model_name
         self.client = Anthropic(api_key=self.api_key)
 
-    def generate_response(self, prompt: str) -> str:
+    def generate_response(self, prompt: str) -> Any:
         try:
             message = self.client.messages.create(
                 model=self.model_name,
@@ -63,9 +85,10 @@ class AnthropicLLM(LLMInterface):
                     }
                 ]
             )
-            return message.content[0].text
+            return message
         except Exception as e:
-            return f"Error calling Anthropic API: {e}"
+            logger.error(f"Error calling Anthropic API: {e}")
+            return None
 
     def get_model_name(self) -> str:
         return self.model_name

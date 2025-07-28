@@ -45,7 +45,7 @@ class LLMInterface(ABC):
     """LLM과의 상호작용을 위한 추상 기본 클래스"""
     
     @abstractmethod
-    def generate_response(self, prompt: str) -> str:
+    def generate_response(self, prompt: str) -> Any:
         """프롬프트에 대한 응답을 생성"""
         pass
 
@@ -81,14 +81,15 @@ class LLMJudge:
         task: str, 
         level: str, 
         model_name: str, 
+        token_usage: int,
         prompt: str,
         response: str,
         reference_answer: Optional[str] = None,
         judge_model: Optional[LLMInterface] = None
-    ) -> List[EvaluationResult]:
+    ) -> str:
         """특정 프롬프트에 대한 모델의 응답을 평가 (여러 기준을 한 번에 심판 모델에 묻는 구조)"""
-        if model_name not in self.models:
-            raise ValueError(f"Model {model_name} not found")
+        # if model_name not in self.models:
+        #     raise ValueError(f"Model {model_name} not found")
         
         results = []
         
@@ -98,10 +99,31 @@ class LLMJudge:
                 prompt, response, reference_answer, self.evaluation_criteria
             )
             #logger.debug(f"eval prompt : {evaluation_prompt}")
-            score_feedback = judge_model.generate_response(evaluation_prompt)
+            judge_response = judge_model.generate_response(evaluation_prompt)
+            
+            # response 객체에서 content 추출
+            if judge_response is not None:
+                try:
+                    if hasattr(judge_response, 'choices') and judge_response.choices and hasattr(judge_response.choices[0], 'message'):
+                        # OpenAI 응답 형식
+                        score_feedback = judge_response.choices[0].message.content or ""
+                    elif hasattr(judge_response, 'content') and judge_response.content:
+                        # Anthropic 응답 형식
+                        if isinstance(judge_response.content, list) and len(judge_response.content) > 0:
+                            score_feedback = judge_response.content[0].text
+                        else:
+                            score_feedback = str(judge_response.content)
+                    else:
+                        score_feedback = str(judge_response)
+                except Exception as e:
+                    logger.error(f"Response parsing error: {e}")
+                    score_feedback = str(judge_response)
+            else:
+                score_feedback = "Error: Judge model returned None"
+                
             #print('\n', "***********************score_feedback : ", score_feedback, '\n')
             #print('\n', "***********************evaluation_prompt : ", evaluation_prompt, '\n')
-            logger.debug(f"score_feedback : {score_feedback}")
+            logger.info(f"score_feedback : {score_feedback}")
 
         #     try:
         #         criteria_results = self._parse_multi_criteria_judge_response(score_feedback, self.evaluation_criteria)
@@ -170,9 +192,9 @@ class LLMJudge:
         #     self.prompt_scores[prompt_key] = {}
         # self.prompt_scores[prompt_key][model_name] = weighted_score
         
-        #results = score_feedback
+        results = score_feedback
         
-        return score_feedback
+        return judge_response
 
     def _create_multi_criteria_prompt(self, prompt: str, response: str, reference_answer: Optional[str], criteria_list: List[EvaluationCriteria]) -> str:
         """여러 평가 기준을 한 번에 묻는 프롬프트 생성"""
@@ -474,48 +496,51 @@ class LLMJudge:
         except FileNotFoundError:
             df = pd.DataFrame(dataset)
 
-        output_file = 'dataset/eval_feedback_midm_base.csv'
+        
 
-       
-        dataset_changed = False
         for index, row in tqdm(df.iterrows(), total=len(df), desc="평가 실행"):
             no = row.get("no")
             domain = row.get("domain")
             task = row.get("task")
             level = row.get("level")
+            model_name = row.get("model")
+            token_usage = row.get("token_usage")
             prompt = row.get("prompt")
             if not prompt:
                 continue
             
             item = row.to_dict()
             reference_answer = item.get("reference_answer")
+            response = item.get("response")
             
-            for model_name, model in self.models.items():
-                #response_col = f"{model_name}_response"
-                response_col = f"response"
-                if response_col not in df.columns:
-                    df[response_col] = ""                    
+            # for model_name, model in self.models.items():
+            #     #response_col = f"{model_name}_response"
+            #     response_col = f"response"
+            #     if response_col not in df.columns:
+            #         df[response_col] = ""                    
                 
-                response = item.get(response_col)
-                logger.debug(f"no : {no}")
-                logger.debug(f"domain : {domain}")
-                logger.debug(f"task : {task}")
-                logger.debug(f"prompt : {prompt}")
-                logger.debug(f"response : {response}")
+            #     response = item.get(response_col)
+            #     logger.debug(f"no : {no}")
+            #     logger.debug(f"domain : {domain}")
+            #     logger.debug(f"task : {task}")
+            #     logger.debug(f"prompt : {prompt}")
+            #     logger.debug(f"response : {response}")
 
-                if not response:
-                    logger.info(f"응답 생성 중: {model_name} for '{prompt[:20]}...'")
-                    response = model.generate_response(prompt)
-                    df.loc[index, response_col] = response
-                    item[response_col] = response
-                    dataset_changed = True
+            #     if not response:
+            #         logger.info(f"응답 생성 중: {model_name} for '{prompt[:20]}...'")
+            #         response = model.generate_response(prompt)
+ 
+            #         df.loc[index, response_col] = response
+            #         item[response_col] = response
+            #         dataset_changed = True
 
             eval_response = self.evaluate_response(
-                no = no,
-                domain = domain,
-                task = task,
-                level = level,
+                no = str(no) if no is not None else "",
+                domain = str(domain) if domain is not None else "",
+                task = str(task) if task is not None else "",
+                level = str(level) if level is not None else "",
                 model_name=model_name,
+                token_usage=token_usage,
                 prompt=prompt,
                 response=response,
                 reference_answer=reference_answer,
@@ -530,7 +555,7 @@ class LLMJudge:
             eval_response_json = eval_response
             #json.dumps([vars(r) for r in eval_response], ensure_ascii=False)
 
-
+            output_file = 'dataset/4.eval_result_data/eval_feedback_llama-3-1-74b.csv'
 
             df.loc[index, response_col] = eval_response_json
             item[response_col] = eval_response_json

@@ -1,17 +1,17 @@
 import json
 from llm_judge.core import LLMJudge, EvaluationCriteria
-from llm_judge.llm_interfaces import OpenAILLM, AnthropicLLM
+from llm_judge.llm_interfaces import OpenAILLM, KT_MAGMA_DEV_LLM
 from dotenv import load_dotenv
 from utils.logger import logger
 from dataset.parser_result import parse_eval_feedback_to_results
+from llm_judge.core import PROMPT_TEMPLATES 
 
 load_dotenv()
 
 def main():
     """LLM Judge 실행을 위한 메인 함수"""
     
-    # 참고: 이 예제를 실행하려면 OPENAI_API_KEY와 ANTHROPIC_API_KEY 환경 변수를 설정해야 합니다.
-    # 필요한 라이브러리: pip install openai anthropic tqdm numpy
+    # 참고: 이 예제를 실행하려면 MODEL 환경 변수를 설정해야 합니다.
     
     # 1. LLM Judge 인스턴스 생성
     judge = LLMJudge()
@@ -25,7 +25,6 @@ def main():
     # 3. 평가할 LLM 모델 및 데이터셋 추가
     try:
         gpt4_o = OpenAILLM(model_name="gpt-4o")
-        #claude3_opus = AnthropicLLM(model_name="claude-3-opus-20240229")
         judge.add_model(gpt4_o)
         #judge.add_model(midm-mini-inst-2.3.1)
         #judge.add_model(midm-pro-inst-2.3)

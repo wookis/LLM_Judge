@@ -87,7 +87,9 @@ for _, spine in ax.spines.items():
 # 가로 범주(컬럼명)를 위에 표시
 ax.xaxis.set_ticks_position('top')
 ax.xaxis.set_label_position('top')
-plt.xticks(rotation=0)
+# Set tick positions first, then rotate
+ax.set_xticks(ax.get_xticks())
+ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
 st.pyplot(fig) 
 #####################################################
 
@@ -136,7 +138,9 @@ for idx, model in enumerate(model_names):
             spine.set_linewidth(2)
         ax.xaxis.set_ticks_position('top')
         ax.xaxis.set_label_position('top')
-        plt.xticks(rotation=0)
+        # Set tick positions first, then rotate
+        ax.set_xticks(ax.get_xticks())
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
         st.pyplot(fig)
 
 
@@ -248,5 +252,7 @@ for _, spine in ax2.spines.items():
     spine.set_linewidth(2)
 ax2.xaxis.set_ticks_position('top')
 ax2.xaxis.set_label_position('top')
-plt.xticks(rotation=0)
+# Set tick positions first, then rotate
+ax2.set_xticks(ax2.get_xticks())
+ax2.set_xticklabels(ax2.get_xticklabels(), rotation=0)
 st.pyplot(fig2)

@@ -14,7 +14,7 @@ import yaml
 from jinja2 import Template
 from utils.logger import logger
 
-PROMPT_CONFIG_PATH = 'config/eval_prompt.yaml'
+PROMPT_CONFIG_PATH = 'config/eval_prompt1.yaml'
 
 def load_prompt_templates():
     with open(PROMPT_CONFIG_PATH, 'r', encoding='utf-8') as f:
@@ -53,6 +53,13 @@ class LLMInterface(ABC):
     def get_model_name(self) -> str:
         """모델 이름 반환"""
         pass
+
+class LLM_MODEL:
+    def __init__(self):
+        self.models: Dict[str, LLMInterface] = {}
+        
+    def add_model(self, model: LLMInterface):
+        self.models[model.get_model_name()] = model
 
 class LLMJudge:
     """LLM의 성능을 평가하는 메인 클래스"""
@@ -555,13 +562,11 @@ class LLMJudge:
             eval_response_json = eval_response
             #json.dumps([vars(r) for r in eval_response], ensure_ascii=False)
 
-            output_file = 'dataset/4.eval_result_data/eval_feedback_llama-3-1-74b.csv'
+            output_file = 'dataset/4.eval_result_data/702-samples-eval_midm-base-inst-2.3.2.csv'
 
             df.loc[index, response_col] = eval_response_json
             item[response_col] = eval_response_json
             df.to_csv(output_file, index=False, encoding='utf-8-sig')
             logger.info(f"평가 결과: {eval_response_json}")
         logger.info(f"\n새로운 평가를 '{output_file}'에 저장합니다.")
-       
-        
-        self.eval_end_time = datetime.now() 
+     

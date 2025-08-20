@@ -1,6 +1,6 @@
 import os
 from typing import Optional, Any
-from .core import LLMInterface
+from llm_judge.core import LLMInterface
 from utils.logger import logger
 
 # Note: To use these classes, you need to install the respective libraries:
@@ -58,6 +58,38 @@ class OpenAILLM(LLMInterface):
     def get_model_name(self) -> str:
         return self.model_name
 
+class KT_MAGMA_DEV_LLM(LLMInterface):
+    """KT_MAGMA_DEV_LLM의 상호작용을 위한 클래스"""
+    def __init__(self, model_name: str, api_key: Optional[str] = None):
+
+        self.api_key = api_key or os.getenv("KT_MAGMA_DEV_gemma_API_KEY")
+        if not self.api_key:
+            raise ValueError("KT_MAGMA_DEV_gemma_API_KEY가 설정되지 않았습니다.")
+        
+        self.model_name = model_name
+        # TODO: 실제 KT_MAGMA_DEV API 클라이언트로 교체 필요
+        # self.client = KT_MAGMA_DEV_Client(api_key=self.api_key)
+
+        print(self.api_key)
+
+    def generate_response(self, prompt: str) -> Any:
+        logger.debug(f"{self.model_name} 연동")
+        try:
+            # TODO: 실제 KT_MAGMA_DEV API 호출로 교체 필요
+            # model_response = self.client.generate(prompt=prompt)
+            # return model_response.text
+            
+            # 임시로 더미 응답 반환
+            return f"KT_MAGMA_DEV 응답 (구현 필요): {prompt[:50]}..."
+            
+        except Exception as e:
+            logger.error(f"Error calling KT_MAGMA_DEV API: {e}")
+            return None
+
+    def get_model_name(self) -> str:
+        return self.model_name
+
+
 class AnthropicLLM(LLMInterface):
     """Anthropic Claude 모델과의 상호작용을 위한 클래스"""
     def __init__(self, model_name: str, api_key: Optional[str] = None):
@@ -92,3 +124,4 @@ class AnthropicLLM(LLMInterface):
 
     def get_model_name(self) -> str:
         return self.model_name
+

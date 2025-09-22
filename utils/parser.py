@@ -2,6 +2,7 @@ from pathlib import Path
 import pandas as pd
 import uuid
 import json
+from ast import literal_eval
 
 def get_target_data(input_dir: str) -> pd.DataFrame:
     list_root_dir = input_dir
@@ -22,10 +23,9 @@ def get_target_data(input_dir: str) -> pd.DataFrame:
 def get_target_file_to_dict(input_file: str) -> dict:
 
     target_dict = {}
-    df = pd.read_csv(input_file)
-    df = pd.DataFrame(df)
-    print(df.head(3))
-
+    df = pd.read_csv(input_file, converters={'messages': literal_eval})
+    
+    
     for index, row in df.iterrows():
         id = uuid.uuid4()
 

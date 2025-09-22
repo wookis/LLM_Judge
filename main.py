@@ -17,10 +17,10 @@ def main():
     judge = LLMJudge()
 
     # 2. 평가 기준 추가
-    judge.add_criteria(EvaluationCriteria(name="정확성", description="응답이 사실에 근거하고 정확한가?", weight=1.5))
-    judge.add_criteria(EvaluationCriteria(name="완결성", description="응답이 질문의 모든 부분을 다루는가?"))
-    judge.add_criteria(EvaluationCriteria(name="스타일", description="지정된 스타일(예: 전문가, 친근함)을 잘 따르는가?", max_score=5.0))
-    judge.add_criteria(EvaluationCriteria(name="총점", description="정확성, 완결성, 스타일 점수에 가중치를 포함한 최종 점수를 0-1사이 소수점 3자리로 계산해주세요.", max_score=1.0))
+    # judge.add_criteria(EvaluationCriteria(name="정확성", description="응답이 사실에 근거하고 정확한가?", weight=1.5))
+    # judge.add_criteria(EvaluationCriteria(name="완결성", description="응답이 질문의 모든 부분을 다루는가?"))
+    # judge.add_criteria(EvaluationCriteria(name="스타일", description="지정된 스타일(예: 전문가, 친근함)을 잘 따르는가?", max_score=5.0))
+    judge.add_criteria(EvaluationCriteria(name="총점", description="각 평가 점수의 평균을 총점으로 0-1사이 소수점 2자리로 계산해주세요.", max_score=1.0))
 
     # 3. 평가할 LLM 모델 및 데이터셋 추가
     try:

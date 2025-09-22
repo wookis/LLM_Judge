@@ -176,7 +176,7 @@ class PromptMaker:
     
     def save_prompt_to_yaml(self, 
                            prompt: str, 
-                           output_path: str = "output.yaml",
+                           output_path: str,
                            metadata: Optional[Dict[str, Any]] = None) -> None:
         """생성된 프롬프트를 YAML 파일로 저장합니다."""
         
@@ -187,11 +187,11 @@ class PromptMaker:
         
         # 저장할 데이터 구성
         output_data = {
-            'prompt': prompt,
-            'metadata': metadata or {
-                'criteria_count': len(self.evaluation_criteria),
-                'criteria_names': [c.name for c in self.evaluation_criteria]
-            }
+            'prompt': prompt
+            # 'metadata': metadata or {
+            #     'criteria_count': len(self.evaluation_criteria),
+            #     'criteria_names': [c.name for c in self.evaluation_criteria]
+            # }
         }
         
         # YAML에서 멀티라인 문자열을 깔끔하게 표시하기 위한 커스텀 representer
@@ -202,16 +202,29 @@ class PromptMaker:
         
         # str 타입에 대한 커스텀 representer 등록
         yaml.add_representer(str, str_presenter)
+
+        print("------------------dusan--------------")
+        print(output_data)
+        # print(yaml.Dumper.yaml_representers)
+        #print(yaml.dump(output_data['prompt'].replace(':',"dusan").replace('{','dusan').replace('}','dusan'),allow_unicode=True))
+        #print(yaml.dump(output_data['prompt'],allow_unicode=True))
+        #print(type(output_data['prompt']))
+        with open('test-dusan.yaml', 'w', encoding='utf-8') as f:
+            f.write(output_data['prompt'])
+        print("------------------dusan--------------")
         
         # 프롬프트에서 \n을 실제 줄바꿈으로 변환 (추가 처리)
         if isinstance(output_data['prompt'], str):
             output_data['prompt'] = output_data['prompt'].replace('\\n', '\n')
         
-        print(output_data['prompt'])
-        # 미리보기 출력 (가독성 향상)
-        print("=== 생성된 YAML 미리보기 ===")
-        print(yaml.dump(output_data, allow_unicode=True, default_flow_style=False))
-        print("==========================")
+        with open('eval_prompt2.yaml', 'w', encoding='utf-8') as f:
+            f.write(output_data['prompt'])
+
+        # print(output_data['prompt'])
+        # # 미리보기 출력 (가독성 향상)
+        # print("=== 생성된 YAML 미리보기 ===")
+        # print(yaml.dump(output_data, allow_unicode=True, default_flow_style=False))
+        # print("==========================")
         try:
             with open(output_path, 'w', newline='\n', encoding='utf-8') as f:
                 yaml.dump(output_data, f, default_flow_style=False, 
@@ -268,34 +281,39 @@ def main():
         template_info = prompt_maker.get_template_info(template_name)
         print(f"  - {template_name}: {template_info.description}")
 
-    template_name='Summary_template'
-    
+    template_name='Knowledge_template'
+    # - Knowledge_template: 사실 정확성을 평가하는 프롬프트
+    # - Reason_template: 단계별 설명의 품질을 평가하는 프롬프트
+    # - Creative_template: 창작/서술형 콘텐츠의 품질을 평가하는 프롬프트
+    # - Summary_template: 요약/요약형 평가 프롬프트
+    # - Compare_template: 비교/분석 답변의 품질을 평가하는 프롬프트
+        
     # 기본 평가 기준 추가
-    default_criteria = create_default_criteria()
-    prompt_maker.add_criteria_list(default_criteria)
+    #default_criteria = create_default_criteria()
+    #prompt_maker.add_criteria_list(default_criteria)
     
     # 평가 기준 요약 출력
     print("\n" + prompt_maker.get_criteria_summary())
     
     # 예시 프롬프트와 응답
-    sample_prompt = "{{prompt}}"
-    sample_response = "{{response}}"
+    target_prompt = "{{prompt}}"
+    target_response = "{{response}}"
     
     # 동적 평가 기준 프롬프트 생성
     print("\n=== 동적 평가 기준 프롬프트 생성 ===")
     try:
         eval_prompt = prompt_maker.generate_prompt(
             template_name,
-            prompt=sample_prompt,
-            response=sample_response
+            prompt=target_prompt,
+            response=target_response
         )
         
         # 프롬프트를 YAML 파일로 저장
         prompt_maker.save_prompt_to_yaml(
             prompt=eval_prompt,
-            output_path="config/eval_prompt1.yaml",
+            output_path=f"config/{template_name}2.yaml",
             metadata={
-                'template_used': 'meeting_agent_criteria_prompt',
+                'template_used': 'LLM_criteria_prompt',
                 'generated_at': '2024-01-01 v1.0'
             }
         )
@@ -309,3 +327,4 @@ def main():
 if __name__ == "__main__":
     main()
 
+## - !include config/Judge_template.yaml

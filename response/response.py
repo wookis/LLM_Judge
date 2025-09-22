@@ -1,19 +1,33 @@
+import os
+import json
+import glob
+import asyncio
+import pandas as pd
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+from llm_judge import llm_interfaces
 from llm_judge.llm_interfaces import OpenAILLM, KT_MAGMA_DEV_LLM
 from llm_judge.core import LLM_MODEL
 from dotenv import load_dotenv
 from utils.logger import logger
-import pandas as pd
+
+from utils.parser import get_target_file_to_dict  
+from mmo_lr_utils.labeler.requester import get_dict_response_from_body  
 
 load_dotenv()
 
-import os
-import json
-import glob
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-import logging
-from utils.parser import get_target_file_to_dict  
-from mmo_lr_utils.labeler.requester import get_dict_response_from_body  
+import ssl
+def _allowSelfSignedHttps(allowed):
+    if (
+        allowed
+        and not os.environ.get("PYTHONHTTPSVERIFY", "")
+        and getattr(ssl, "_create_unverified_context", None)
+    ):
+        ssl._create_default_https_context = ssl._create_unverified_context
+
+
+_allowSelfSignedHttps(True)
+
 
 
 
@@ -159,7 +173,25 @@ def main():
     print(len(taget_data))
 
     messsages = taget_data[list(taget_data.keys())[0]]['messages']
-    #print(list(messsages))
+    print(messsages)
+    print(messsages[1]['content'])
+
+    for model in tagetLLM.models:
+        print(model)
+        response = tagetLLM.models[model].generate_response(messsages)
+        print(response)
+        print("--------------------------------")
+
+
+
+    #print(tagetLLM.models)
+    #response = get_response_from_llm(taget_data[list(taget_data.keys())[0]]['model'], messsages)
+    # response = tagetLLM.models[taget_data[list(taget_data.keys())[0]]['model']].generate_response(messsages)
+    # print(response)
+
+    # response = llm_interfaces.KT_MAGMA_DEV_LLM(model_name="gemma-2-9b-it").generate_response(messsages)
+    # print(response)
+
 
     # user_content = []  
     # for message in messsages:
@@ -176,52 +208,6 @@ def main():
     # #get_response_from_llm("gpt-4o", prompt)
 
 
-    url = "https://llm.prd.aiops-apim.kt.co.kr/mmo-lr-encoder-OG084510-0/predict/task"
-    headers = {
-    "api-key": "6327a3670eac4f86b22c70ddf7e8b48f",
-    "Content-Type": "application/json"
-    }
-
-    print("test get_dict_response_from_body")
-
-    for dict_sample_conversation in list_dict_sample_conversation:
-        body = {
-            "messages": dict_sample_conversation,
-        }
-        response = await get_dict_response_from_body(
-            **{
-                "url": url,
-                "headers": headers,
-                "body": body            
-            }
-        )
-        print(response)
-
-def get_response_from_llm(model_name: str, prompt: str) -> str:
-    """
-    LLM 모델을 사용하여 응답을 생성합니다.
-    """
-    return tagetLLM.models[model_name].generate_response(prompt)
-    
-    # 파일 처리 실행
-    # summary = process_tldc_files(str(input_dir), str(output_dir))
-    
-    # 처리 결과 출력
-    # logger.info("=== 처리 완료 ===")
-    # logger.info(f"총 파일 수: {summary.get('total_files', 0)}")
-    # logger.info(f"CSV 파일 수: {summary.get('csv_files', 0)}")
-    # logger.info(f"JSON 파일 수: {summary.get('json_files', 0)}")
-    # logger.info(f"처리된 파일 수: {summary.get('processed_files', 0)}")
-    # logger.info(f"총 메시지 수: {summary.get('total_messages', 0)}")
-    # logger.info(f"총 응답 수: {summary.get('total_responses', 0)}")
-    # logger.info(f"생성된 출력 파일 수: {len(summary.get('output_files', []))}")
-    
-    # if summary.get('errors'):
-    #     logger.warning(f"오류 발생 수: {len(summary['errors'])}")
-    #     for error in summary['errors'][:5]:  # 처음 5개 오류만 출력
-    #         logger.warning(f"  - {error}")
-    
-    # logger.info("TLDC 데이터 처리 완료")
 
 
 if __name__ == "__main__":

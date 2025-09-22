@@ -2,6 +2,8 @@ import os
 from typing import Optional, Any
 from llm_judge.core import LLMInterface
 from utils.logger import logger
+from mmo_lr_utils.labeler.requester import get_dict_response_from_body  
+import asyncio
 
 # Note: To use these classes, you need to install the respective libraries:
 # pip install openai anthropic
@@ -72,15 +74,30 @@ class KT_MAGMA_DEV_LLM(LLMInterface):
 
         print(self.api_key)
 
-    def generate_response(self, prompt: str) -> Any:
+    def generate_response(self, messages: list) -> Any:
         logger.debug(f"{self.model_name} 연동")
         try:
-            # TODO: 실제 KT_MAGMA_DEV API 호출로 교체 필요
-            # model_response = self.client.generate(prompt=prompt)
-            # return model_response.text
+            url = "https://llm.prd.aiops-apim.kt.co.kr/midm-bitext-base-chat-OG085803-0/v1/chat/completions"
+            headers = {
+            "api-key": "fbe5953ba9e248fbaef2b79545e4b0de",
+            "Content-Type": "application/json"
+            }
+
+            print("test get_dict_response_from_body")
+
+            body = {
+                "messages": messages,
+            }
+            response = asyncio.run(get_dict_response_from_body(
+                **{
+                    "url": url,
+                    "headers": headers,
+                    "body": body        
+                }
+                    )
+            )
             
-            # 임시로 더미 응답 반환
-            return f"KT_MAGMA_DEV 응답 (구현 필요): {prompt[:50]}..."
+            print(response)
             
         except Exception as e:
             logger.error(f"Error calling KT_MAGMA_DEV API: {e}")

@@ -1,7 +1,7 @@
 import yaml
 
 data = {
-    'text': "첫번째 줄\n두번째 줄\n세번째 줄"
+    'text': '''\n당신은 대규모 언어 모델이 작성한 '요약  사용자 입력 반영도: '''
 }
 
 # 기본 dump - \n 그대로 출력
@@ -15,7 +15,9 @@ def str_presenter(dumper, data):
 
 yaml.add_representer(str, str_presenter)
 
-print(yaml.dump(data, allow_unicode=True))
+print(yaml.dump(data['text'], allow_unicode=True))
+# print(yaml.Dumper.yaml_representers)
+# print(type(data['text']))
 
 with open('.test.yaml', 'w', newline='\n', encoding='utf-8') as f:
     yaml.dump(data, f, default_flow_style=False, 

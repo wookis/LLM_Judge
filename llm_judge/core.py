@@ -14,7 +14,7 @@ import yaml
 from jinja2 import Template
 from utils.logger import logger
 
-PROMPT_CONFIG_PATH = 'config/eval_prompt1.yaml'
+PROMPT_CONFIG_PATH = 'config/Judge_template.yaml'
 
 def load_prompt_templates():
     with open(PROMPT_CONFIG_PATH, 'r', encoding='utf-8') as f:
@@ -91,7 +91,7 @@ class LLMJudge:
         token_usage: int,
         prompt: str,
         response: str,
-        reference_answer: Optional[str] = None,
+        reference_data: Optional[str] = None,
         judge_model: Optional[LLMInterface] = None
     ) -> str:
         """특정 프롬프트에 대한 모델의 응답을 평가 (여러 기준을 한 번에 심판 모델에 묻는 구조)"""
@@ -99,13 +99,31 @@ class LLMJudge:
         #     raise ValueError(f"Model {model_name} not found")
         
         results = []
-        
+        output_prompt_file = "dataset/4.eval_result_data/250911-102500-prompt_df3.csv"
+
+
         if judge_model:
-            # 여러 평가 기준을 한 번에 묻는 프롬프트 생성
-            evaluation_prompt = self._create_multi_criteria_prompt(
-                prompt, response, reference_answer, self.evaluation_criteria
+            # task별 동적 평가 프롬프트 생성
+            evaluation_prompt = self._create_multi_criteria_prompt(task,
+                prompt, response, reference_data, self.evaluation_criteria
             )
             #logger.debug(f"eval prompt : {evaluation_prompt}")
+            
+            # Create DataFrame from prompt string for CSV saving
+            prompt_df = pd.DataFrame({
+                'no': [no],
+                'task': [task],
+                'domain': [domain],
+                'level': [level],
+                'prompt': [prompt],
+                'response': [response],
+                'reference_data': [reference_data or ''],
+                'evaluation_prompt': [evaluation_prompt]
+            })
+            #기존파일에 추가
+            prompt_df.to_csv(output_prompt_file, index=False, encoding='utf-8-sig', mode='a')
+            #prompt_df.to_csv(output_prompt_file, index=False, encoding='utf-8-sig')
+            
             judge_response = judge_model.generate_response(evaluation_prompt)
             
             # response 객체에서 content 추출
@@ -130,7 +148,7 @@ class LLMJudge:
                 
             #print('\n', "***********************score_feedback : ", score_feedback, '\n')
             #print('\n', "***********************evaluation_prompt : ", evaluation_prompt, '\n')
-            logger.info(f"score_feedback : {score_feedback}")
+            #logger.info(f"score_feedback : {score_feedback}")
 
         #     try:
         #         criteria_results = self._parse_multi_criteria_judge_response(score_feedback, self.evaluation_criteria)
@@ -203,12 +221,30 @@ class LLMJudge:
         
         return judge_response
 
-    def _create_multi_criteria_prompt(self, prompt: str, response: str, reference_answer: Optional[str], criteria_list: List[EvaluationCriteria]) -> str:
+    def _create_multi_criteria_prompt(self, task: str, prompt: str, response: str, reference_data: Optional[str], criteria_list: List[EvaluationCriteria]) -> str:
         """여러 평가 기준을 한 번에 묻는 프롬프트 생성"""
         #template_str = PROMPT_TEMPLATES['multi_criteria_prompt']
-        template_str = PROMPT_TEMPLATES['single_criteria_prompt']
+        # - Knowledge_template: 사실 정확성을 평가하는 프롬프트
+        # - Reason_template: 단계별 설명의 품질을 평가하는 프롬프트
+        # - Creative_template: 창작/서술형 콘텐츠의 품질을 평가하는 프롬프트
+        # - Summary_template: 요약/요약형 평가 프롬프트
+        # - Compare_template: 비교/분석 답변의 품질을 평가하는 프롬프트
+        if task == 'T10'or task == 'T9':
+            template_str = PROMPT_TEMPLATES['Knowledge_template']
+        elif task == 'T3' or task == 'T4' or task == 'T8':
+            template_str = PROMPT_TEMPLATES['Reason_template']
+        elif task == 'T5' or task == 'T6' or task == 'T7':
+            template_str = PROMPT_TEMPLATES['Creative_template']
+        elif task == 'T2':
+            template_str = PROMPT_TEMPLATES['Summary_template']
+        elif task == 'T1' or task == 'T11' or task == 'T12':
+            template_str = PROMPT_TEMPLATES['Reason_template']
+        else:
+            template_str = PROMPT_TEMPLATES['Reason_template']   
+            raise ValueError(f"Unknown task: {task}")
+        
         template = Template(template_str)
-        return template.render(prompt=prompt, response=response, reference_answer=reference_answer, criteria_list=criteria_list)
+        return template.render(prompt=prompt, response=response, reference_answer=reference_data, criteria_list=criteria_list)
 
     def _parse_multi_criteria_judge_response(self, response: str, criteria_list: List[EvaluationCriteria]) -> List[tuple]:
         """심판 모델의 표/JSON 응답에서 각 기준별 점수와 피드백을 파싱 (JSON도 지원)"""
@@ -517,7 +553,7 @@ class LLMJudge:
                 continue
             
             item = row.to_dict()
-            reference_answer = item.get("reference_answer")
+            reference_data = item.get("reference_data")
             response = item.get("response")
             
             # for model_name, model in self.models.items():
@@ -541,32 +577,40 @@ class LLMJudge:
             #         item[response_col] = response
             #         dataset_changed = True
 
-            eval_response = self.evaluate_response(
-                no = str(no) if no is not None else "",
-                domain = str(domain) if domain is not None else "",
-                task = str(task) if task is not None else "",
-                level = str(level) if level is not None else "",
-                model_name=model_name,
-                token_usage=token_usage,
-                prompt=prompt,
-                response=response,
-                reference_answer=reference_answer,
-                judge_model=judge_model
-            )
-            response_col = f"{model_name}_result"
-            #eval_response = self.results
-            #logger.debug(f"평가 결과: {self.results}")
-            logger.info(f"평가 저장 중: {model_name} for '{prompt[:20]}...'")
+            
+            #print(task)
+            # task 값이 "," 기준으로 몇개인지 확인
+            task_list = task.split(",")
+            for task in task_list:
+                print(task)
+                 
+                eval_response = self.evaluate_response(
+                    no = str(no) if no is not None else "",
+                    domain = str(domain) if domain is not None else "",
+                    task = str(task) if task is not None else "",
+                    level = str(level) if level is not None else "",
+                    model_name=model_name,
+                    token_usage=token_usage,
+                    prompt=prompt,
+                    response=response,
+                    reference_data=reference_data,
+                    judge_model=judge_model
+                )
+                response_col = f"{model_name}_result"
+                #eval_response = self.results
+                #logger.debug(f"평가 결과: {self.results}")
+                logger.info(f"평가 저장 중: {model_name} for '{prompt[:20]}...'")
 
 
-            eval_response_json = eval_response
-            #json.dumps([vars(r) for r in eval_response], ensure_ascii=False)
+                eval_response_json = eval_response
+                #json.dumps([vars(r) for r in eval_response], ensure_ascii=False)
 
-            output_file = 'dataset/4.eval_result_data/702-samples-eval_midm-base-inst-2.3.2.csv'
+                output_file = 'dataset/4.eval_result_data/702-multi_judge.csv'
 
-            df.loc[index, response_col] = eval_response_json
-            item[response_col] = eval_response_json
-            df.to_csv(output_file, index=False, encoding='utf-8-sig')
-            logger.info(f"평가 결과: {eval_response_json}")
+                df.loc[index, response_col] = eval_response_json
+                item[response_col] = eval_response_json
+                df.to_csv(output_file, index=False, encoding='utf-8-sig')
+                logger.info(f"평가 결과: {eval_response_json}")
+
         logger.info(f"\n새로운 평가를 '{output_file}'에 저장합니다.")
      
